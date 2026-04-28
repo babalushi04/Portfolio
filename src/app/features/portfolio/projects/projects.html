@@ -38,12 +38,19 @@
 
     <div class="project-right">
       <div class="project-image-frame">
-        <img
-          [src]="current.image"
-          alt="Project preview"
-          title="Project preview"
-          class="project-img"
-        />
+        <div class="browser-chrome">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="url-bar">{{ current.displayUrl }}</span>
+        </div>
+        <div class="image-area" [class.logo-mode]="current.logoMode">
+          <img
+            [src]="current.image"
+            [alt]="current.title + ' preview'"
+            title="{{ current.title }}"
+          />
+        </div>
       </div>
     </div>
 
@@ -65,7 +72,7 @@
           [class.active]="i === currentIndex"
           (click)="goTo(i)"
           [attr.aria-label]="'Project ' + (i + 1)"
-          [title]="'Project ' + (i + 1)"
+          title="Project navigation"
         ></button>
       }
     </div>

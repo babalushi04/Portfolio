@@ -8,6 +8,8 @@ export interface Project {
   github: string;
   live: string;
   image: string;
+  displayUrl: string;
+  logoMode: boolean;
 }
 
 @Component({
@@ -28,6 +30,8 @@ export class Projects {
       github: 'https://github.com/babalushi04/join',
       live: '',
       image: 'assets/img/projects/join-preview.jpg',
+      displayUrl: 'github.com/babalushi04/join',
+      logoMode: false,
     },
     {
       number: '02',
@@ -37,6 +41,8 @@ export class Projects {
       github: 'https://github.com/babalushi04/EL-Pollo-Loco',
       live: '',
       image: 'assets/img/projects/elpollo-preview.jpg',
+      displayUrl: 'github.com/babalushi04/EL-Pollo-Loco',
+      logoMode: false,
     },
     {
       number: '03',
@@ -46,6 +52,8 @@ export class Projects {
       github: 'https://github.com/babalushi04/kochwelt',
       live: '',
       image: 'assets/img/projects/kochwelt-preview.svg',
+      displayUrl: 'github.com/babalushi04/kochwelt',
+      logoMode: false,
     },
     {
       number: '04',
@@ -54,7 +62,9 @@ export class Projects {
       techs: ['HTML', 'CSS', 'JavaScript'],
       github: '',
       live: 'https://www.clearifix.com',
-      image: 'assets/img/projects/clearifix-preview.svg',
+      image: 'assets/img/projects/clearifix-preview.jpg',
+      displayUrl: 'clearifix.com',
+      logoMode: true,
     },
     {
       number: '05',
@@ -64,6 +74,8 @@ export class Projects {
       github: '',
       live: 'https://www.permacare24.com',
       image: 'assets/img/projects/permacare-preview.jpg',
+      displayUrl: 'permacare24.com',
+      logoMode: true,
     },
   ];
 
