@@ -12,6 +12,11 @@ export class LanguageService {
     this.translate.use(this.currentLang);
   }
 
+  setLanguage(lang: string): void {
+    this.currentLang = lang;
+    this.translate.use(lang);
+  }
+
   getCurrentLang(): string {
     return this.currentLang;
   }

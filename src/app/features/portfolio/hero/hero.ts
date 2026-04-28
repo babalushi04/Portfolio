@@ -8,9 +8,11 @@ import { Component } from '@angular/core';
 })
 export class Hero {
   marqueeItems = [
-    'HTML', '✦', 'CSS', '✦', 'JavaScript', '✦',
-    'TypeScript', '✦', 'Angular', '✦', 'Responsive Design', '✦',
-    'Git', '✦', 'Firebase', '✦',
+    'Available for remote work', '✦',
+    'Frontend Developer', '✦',
+    'Based in Zeitlarn, DE', '✦',
+    'Open to work', '✦',
+    'Angular · TypeScript · JavaScript', '✦',
   ];
 
   scrollTo(id: string): void {
