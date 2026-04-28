@@ -1,0 +1,148 @@
+@use '../../../../styles/variables' as *;
+
+.testimonials {
+  background: $bg-dark;
+  overflow: hidden;
+}
+
+.testimonials-inner {
+  @include section-setup;
+  @include flex-column;
+  align-items: center;
+  gap: 48px;
+  text-align: center;
+}
+
+.section-label { @include section-label; }
+.section-title { @include section-title; }
+
+/* ---- Slider ---- */
+.slider-wrapper {
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.slider-track {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.5s ease;
+  padding: 16px 0;
+}
+
+.testimonial-card {
+  flex: 0 0 calc(33.333% - 22px);
+  min-width: 260px;
+  @include flex-column;
+  gap: 16px;
+  padding: 32px 28px;
+  background: $bg-secondary;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  text-align: left;
+  transition: all $transition;
+  opacity: 0.45;
+  transform: scale(0.95);
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: $border-accent;
+    background: $bg-card;
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 calc(80vw);
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.quote-icon {
+  font-size: 4rem;
+  line-height: 0.6;
+  color: $accent;
+  font-family: Georgia, serif;
+  height: 32px;
+  display: block;
+}
+
+.quote-text {
+  color: $text-secondary;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  flex: 1;
+}
+
+.quote-divider {
+  height: 1px;
+  background: $border;
+  margin: 4px 0;
+}
+
+.author-info {
+  @include flex-column;
+  gap: 4px;
+}
+
+.author-name {
+  color: $text-primary;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.author-role {
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  color: $accent;
+}
+
+/* ---- Controls ---- */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ctrl-arrow {
+  background: transparent;
+  border: 1px solid $border;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  @include flex-center;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+.ctrl-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ctrl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $border;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all $transition;
+
+  &.active {
+    background: $accent;
+    transform: scale(1.4);
+  }
+
+  &:hover { background: $text-secondary; }
+}
