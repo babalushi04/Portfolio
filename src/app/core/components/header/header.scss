@@ -27,16 +27,15 @@
 }
 
 .logo {
-  font-family: $font-mono;
-  font-size: 1.4rem;
+  font-family: $font-primary;
+  font-size: 1.1rem;
   font-weight: 700;
   color: $text-primary;
   cursor: pointer;
   transition: color $transition;
+  letter-spacing: 0.02em;
 
   &:hover { color: $accent; }
-
-  .logo-bracket { color: $accent; }
 }
 
 .nav-desktop {

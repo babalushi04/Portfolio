@@ -12,10 +12,12 @@
     </div>
 
     <div class="skills-grid">
-      <div class="skill-card" *ngFor="let skill of skills">
-        <img [src]="skill.icon" [alt]="skill.name" [title]="skill.name" width="48" height="48" />
-        <span>{{ skill.name }}</span>
-      </div>
+      @for (skill of skills; track skill.name) {
+        <div class="skill-card">
+          <img [src]="skill.icon" alt="{{ skill.name }}" title="{{ skill.name }}" width="48" height="48" />
+          <span>{{ skill.name }}</span>
+        </div>
+      }
     </div>
   </div>
 </section>

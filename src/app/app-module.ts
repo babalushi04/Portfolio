@@ -18,6 +18,7 @@ import { Projects } from './features/portfolio/projects/projects';
 import { Contact } from './features/portfolio/contact/contact';
 import { Imprint } from './features/legal/imprint/imprint';
 import { Privacy } from './features/legal/privacy/privacy';
+import { Testimonials } from './features/portfolio/testimonials/testimonials';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { Privacy } from './features/legal/privacy/privacy';
     Contact,
     Imprint,
     Privacy,
+    Testimonials,
   ],
   imports: [
     BrowserModule,
