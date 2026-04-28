@@ -34,13 +34,23 @@
   "PROJECTS": {
     "LABEL": "MEINE ARBEIT",
     "TITLE": "Projekte",
+    "SUBTITLE": "Klicke auf ein Projekt, um mehr zu erfahren.",
+    "WHAT": "Worum geht es in diesem Projekt?",
+    "NEXT": "Nächstes Projekt",
     "JOIN_DESC": "Join ist ein webbasiertes Projektmanagement-Tool inspiriert vom Kanban-System. Es ermöglicht Teams, Aufgaben zu erstellen, zu organisieren und den Fortschritt zu verfolgen – mit übersichtlichem Board-Layout und intuitivem Drag-and-Drop.",
     "JOIN_TECHS": "HTML | CSS | JavaScript | Firebase",
     "ELPOLLO_DESC": "El Pollo Loco ist ein 2D Jump-and-Run-Browsergame mit objektorientiertem JavaScript. Der Spieler steuert einen Charakter durch Levels voller Gegner, sammelt Items und bekämpft einen Endboss.",
     "ELPOLLO_TECHS": "HTML | CSS | JavaScript",
+    "KOCHWELT_DESC": "Kochwelt ist eine Web-Applikation für Kochbegeisterte, entwickelt im Team mit Daniel Sack und Daniel Stürmer. Nutzer können Rezepte entdecken, speichern und eigene Kreationen teilen.",
+    "CLEARIFIX_DESC": "Clearifix ist eine professionelle Website für ein Reinigungsunternehmen. Die Seite präsentiert die Dienstleistungen übersichtlich und ermöglicht eine einfache Kontaktaufnahme.",
+    "PERMACARE_DESC": "Permacare24 ist eine professionelle Website für einen Pflegedienstleister. Die Seite stellt das Angebot klar dar und erleichtert Interessenten die Kontaktaufnahme.",
     "GITHUB": "GitHub",
-    "LIVE": "Live Demo",
+    "LIVE": "Live ansehen",
     "COMING_SOON": "Demnächst verfügbar"
+  },
+  "TESTIMONIALS": {
+    "LABEL": "FEEDBACK",
+    "TITLE": "Was meine Kollegen über mich sagen"
   },
   "CONTACT": {
     "LABEL": "KONTAKT",
