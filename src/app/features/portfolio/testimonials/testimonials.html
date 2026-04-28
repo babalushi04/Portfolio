@@ -3,19 +3,38 @@
     <p class="section-label">{{ 'TESTIMONIALS.LABEL' | translate }}</p>
     <h2 class="section-title">{{ 'TESTIMONIALS.TITLE' | translate }}</h2>
 
-    <div class="slider-wrapper">
-      <div class="slider-track" [style.transform]="'translateX(calc(-' + activeIndex + ' * 100% / 3))'">
-        @for (t of testimonials; track t.author; let i = $index) {
-          <div class="testimonial-card" [class.active]="i === activeIndex">
-            <div class="quote-icon">&ldquo;</div>
-            <p class="quote-text">{{ getQuote(t) }}</p>
-            <div class="quote-divider"></div>
-            <div class="author-info">
-              <strong class="author-name">{{ t.author }}</strong>
-              <span class="author-role">{{ t.role }} · {{ t.project }}</span>
-            </div>
-          </div>
-        }
+    <div class="cards-row">
+      <!-- Linke Karte (vorherige) -->
+      <div class="testimonial-card side-card">
+        <div class="quote-icon">&ldquo;</div>
+        <p class="quote-text">{{ getQuote(prevCard) }}</p>
+        <div class="quote-divider"></div>
+        <div class="author-info">
+          <strong class="author-name">{{ prevCard.author }}</strong>
+          <span class="author-role">{{ prevCard.role }} · {{ prevCard.project }}</span>
+        </div>
+      </div>
+
+      <!-- Mittlere Karte (aktive) -->
+      <div class="testimonial-card center-card">
+        <div class="quote-icon">&ldquo;</div>
+        <p class="quote-text">{{ getQuote(activeCard) }}</p>
+        <div class="quote-divider"></div>
+        <div class="author-info">
+          <strong class="author-name">{{ activeCard.author }}</strong>
+          <span class="author-role">{{ activeCard.role }} · {{ activeCard.project }}</span>
+        </div>
+      </div>
+
+      <!-- Rechte Karte (nächste) -->
+      <div class="testimonial-card side-card">
+        <div class="quote-icon">&ldquo;</div>
+        <p class="quote-text">{{ getQuote(nextCard) }}</p>
+        <div class="quote-divider"></div>
+        <div class="author-info">
+          <strong class="author-name">{{ nextCard.author }}</strong>
+          <span class="author-role">{{ nextCard.role }} · {{ nextCard.project }}</span>
+        </div>
       </div>
     </div>
 

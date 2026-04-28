@@ -15,7 +15,7 @@ interface Testimonial {
   styleUrl: './testimonials.scss',
 })
 export class Testimonials {
-  activeIndex = 1;
+  activeIndex = 0;
 
   testimonials: Testimonial[] = [
     {
@@ -48,8 +48,24 @@ export class Testimonials {
     },
   ];
 
-  get currentLang(): string {
-    return document.documentElement.lang || 'de';
+  get prevIndex(): number {
+    return (this.activeIndex - 1 + this.testimonials.length) % this.testimonials.length;
+  }
+
+  get nextIndex(): number {
+    return (this.activeIndex + 1) % this.testimonials.length;
+  }
+
+  get prevCard(): Testimonial {
+    return this.testimonials[this.prevIndex];
+  }
+
+  get activeCard(): Testimonial {
+    return this.testimonials[this.activeIndex];
+  }
+
+  get nextCard(): Testimonial {
+    return this.testimonials[this.nextIndex];
   }
 
   getQuote(t: Testimonial): string {
@@ -58,11 +74,11 @@ export class Testimonials {
   }
 
   prev(): void {
-    this.activeIndex = (this.activeIndex - 1 + this.testimonials.length) % this.testimonials.length;
+    this.activeIndex = this.prevIndex;
   }
 
   next(): void {
-    this.activeIndex = (this.activeIndex + 1) % this.testimonials.length;
+    this.activeIndex = this.nextIndex;
   }
 
   goTo(i: number): void {
