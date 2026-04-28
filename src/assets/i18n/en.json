@@ -1,0 +1,70 @@
+{
+  "NAV": {
+    "ABOUT": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "GREETING": "Hi, I am",
+    "ROLE": "Frontend Developer",
+    "CTA_PROJECTS": "My Projects",
+    "CTA_CONTACT": "Get in touch",
+    "SCROLL": "Scroll down"
+  },
+  "ABOUT": {
+    "LABEL": "WHO I AM",
+    "TITLE": "About me",
+    "TEXT_1": "I am Virxhin Bytyqi, a passionate Frontend Developer from Regensburg, Germany. At the Developer Akademie, I have intensively deepened my knowledge in HTML, CSS, JavaScript, TypeScript, and Angular.",
+    "TEXT_2": "My passion is turning creative ideas into user-friendly and modern web applications. Clean, maintainable code and thoughtful design go hand in hand for me.",
+    "INFO_LEARNING": "Continuous Learning",
+    "INFO_LEARNING_DESC": "I learn something new every day and stay up to date with the latest technologies.",
+    "INFO_QUALITY": "Quality Awareness",
+    "INFO_QUALITY_DESC": "I write clean, maintainable code and place great importance on code quality.",
+    "INFO_LOCATION": "Regensburg, Germany",
+    "INFO_LOCATION_DESC": "Open to remote work and local opportunities in the Regensburg area."
+  },
+  "SKILLS": {
+    "LABEL": "MY TOOLBOX",
+    "TITLE": "Skills",
+    "SUBTITLE": "What I know",
+    "DESC": "I have experience building modern web applications. Through continuous learning, I constantly expand my skill set.",
+    "CTA": "View my projects"
+  },
+  "PROJECTS": {
+    "LABEL": "MY WORK",
+    "TITLE": "Projects",
+    "JOIN_DESC": "Join is a web-based project management tool inspired by the Kanban system. It allows teams to create, organize, and track tasks with a clear board layout and intuitive drag-and-drop functionality.",
+    "JOIN_TECHS": "HTML | CSS | JavaScript | Firebase",
+    "ELPOLLO_DESC": "El Pollo Loco is a 2D jump-and-run browser game built with object-oriented JavaScript. The player guides a character through levels full of enemies, collects items, and battles a final boss.",
+    "ELPOLLO_TECHS": "HTML | CSS | JavaScript",
+    "GITHUB": "GitHub",
+    "LIVE": "Live Demo",
+    "COMING_SOON": "Coming soon"
+  },
+  "CONTACT": {
+    "LABEL": "CONTACT",
+    "TITLE": "Let's talk!",
+    "SUBTITLE": "Do you have a project in mind or just want to say hello? Write to me – I look forward to hearing from you.",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "MESSAGE": "Your message",
+    "PRIVACY_TEXT": "I have read the",
+    "PRIVACY_LINK": "privacy policy",
+    "PRIVACY_SUFFIX": "and agree to the processing of my data.",
+    "SEND": "Send message",
+    "SUCCESS": "Your message was sent successfully. I will get back to you soon!",
+    "ERROR": "An error occurred while sending. Please try again.",
+    "REQUIRED": "This field is required.",
+    "EMAIL_INVALID": "Please enter a valid email address.",
+    "MIN_LENGTH": "Please enter at least 10 characters."
+  },
+  "FOOTER": {
+    "MADE_WITH": "Developed by",
+    "IMPRINT": "Imprint",
+    "PRIVACY": "Privacy Policy"
+  },
+  "LOADER": {
+    "LOADING": "Loading..."
+  }
+}

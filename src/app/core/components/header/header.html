@@ -1,0 +1,33 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="header-inner">
+    <a class="logo" (click)="scrollTo('hero')">
+      <span class="logo-bracket">&lt;</span>VB<span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <nav class="nav-desktop">
+      <a (click)="scrollTo('about')" class="nav-link">{{ 'NAV.ABOUT' | translate }}</a>
+      <a (click)="scrollTo('skills')" class="nav-link">{{ 'NAV.SKILLS' | translate }}</a>
+      <a (click)="scrollTo('projects')" class="nav-link">{{ 'NAV.PROJECTS' | translate }}</a>
+      <a (click)="scrollTo('contact')" class="nav-link">{{ 'NAV.CONTACT' | translate }}</a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="lang-toggle" (click)="langService.toggleLanguage()">
+        {{ langService.getCurrentLang() === 'de' ? 'EN' : 'DE' }}
+      </button>
+      <button type="button" class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav-mobile" [class.open]="menuOpen">
+    <a (click)="scrollTo('about')" class="nav-link">{{ 'NAV.ABOUT' | translate }}</a>
+    <a (click)="scrollTo('skills')" class="nav-link">{{ 'NAV.SKILLS' | translate }}</a>
+    <a (click)="scrollTo('projects')" class="nav-link">{{ 'NAV.PROJECTS' | translate }}</a>
+    <a (click)="scrollTo('contact')" class="nav-link">{{ 'NAV.CONTACT' | translate }}</a>
+    <button type="button" class="lang-toggle" (click)="langService.toggleLanguage(); closeMenu()">
+      {{ langService.getCurrentLang() === 'de' ? 'EN' : 'DE' }}
+    </button>
+  </nav>
+</header>

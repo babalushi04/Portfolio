@@ -1,0 +1,21 @@
+<section class="skills" id="skills">
+  <div class="skills-inner">
+    <div class="skills-left">
+      <p class="section-label">{{ 'SKILLS.LABEL' | translate }}</p>
+      <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
+      <p class="skills-subtitle">{{ 'SKILLS.SUBTITLE' | translate }}</p>
+      <p class="skills-desc">{{ 'SKILLS.DESC' | translate }}</p>
+      <a class="btn-primary" (click)="scrollTo('projects')">
+        {{ 'SKILLS.CTA' | translate }}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let skill of skills">
+        <img [src]="skill.icon" [alt]="skill.name" [title]="skill.name" width="48" height="48" />
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,129 @@
+@use '../../../../styles/variables' as *;
+
+.about {
+  background: $bg-secondary;
+}
+
+.about-inner {
+  @include section-setup;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+
+.about-image-col {
+  flex-shrink: 0;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 380px;
+  height: 440px;
+
+  @media (max-width: 1100px) { width: 300px; height: 360px; }
+  @media (max-width: 900px) { width: 260px; height: 300px; }
+}
+
+.about-image-deco {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid $border-accent;
+  border-radius: $radius-lg;
+}
+
+.about-image-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $bg-card;
+  border: 1px solid $border;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.about-image-placeholder {
+  width: 100%;
+  height: 100%;
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: $text-muted;
+  font-size: 0.875rem;
+}
+
+.about-text-col {
+  @include flex-column;
+  gap: 20px;
+  flex: 1;
+}
+
+.section-label {
+  @include section-label;
+}
+
+.section-title {
+  @include section-title;
+}
+
+.about-para {
+  color: $text-secondary;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-info-grid {
+  @include flex-column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.info-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  transition: border-color $transition;
+
+  &:hover { border-color: $border-accent; }
+
+  strong {
+    display: block;
+    color: $text-primary;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  p {
+    color: $text-secondary;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-sm;
+  background: rgba(61, 207, 182, 0.1);
+  @include flex-center;
+  color: $accent;
+}

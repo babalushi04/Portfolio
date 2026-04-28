@@ -1,0 +1,70 @@
+{
+  "NAV": {
+    "ABOUT": "Über mich",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projekte",
+    "CONTACT": "Kontakt"
+  },
+  "HERO": {
+    "GREETING": "Hallo, ich bin",
+    "ROLE": "Frontend Developer",
+    "CTA_PROJECTS": "Meine Projekte",
+    "CTA_CONTACT": "Kontakt aufnehmen",
+    "SCROLL": "Scrollen"
+  },
+  "ABOUT": {
+    "LABEL": "WER ICH BIN",
+    "TITLE": "Über mich",
+    "TEXT_1": "Ich bin Virxhin Bytyqi, ein leidenschaftlicher Frontend Developer aus Regensburg. In der Developer Akademie habe ich meine Kenntnisse in HTML, CSS, JavaScript, TypeScript und Angular intensiv vertieft.",
+    "TEXT_2": "Meine Leidenschaft ist es, kreative Ideen in benutzerfreundliche und moderne Web-Anwendungen umzusetzen. Sauberer, wartbarer Code und durchdachtes Design gehen für mich Hand in Hand.",
+    "INFO_LEARNING": "Ständiges Lernen",
+    "INFO_LEARNING_DESC": "Ich bilde mich täglich weiter und bleibe mit neuen Technologien auf dem Laufenden.",
+    "INFO_QUALITY": "Qualitätsbewusstsein",
+    "INFO_QUALITY_DESC": "Ich schreibe sauberen, wartbaren Code und lege großen Wert auf Codequalität.",
+    "INFO_LOCATION": "Regensburg, Deutschland",
+    "INFO_LOCATION_DESC": "Offen für Remote-Arbeit und lokale Möglichkeiten im Raum Regensburg."
+  },
+  "SKILLS": {
+    "LABEL": "MEIN WERKZEUGKASTEN",
+    "TITLE": "Skills",
+    "SUBTITLE": "Was ich beherrsche",
+    "DESC": "Ich habe Erfahrung in der Entwicklung von modernen Web-Anwendungen. Durch kontinuierliches Lernen erweitere ich mein Skillset stetig.",
+    "CTA": "Meine Projekte ansehen"
+  },
+  "PROJECTS": {
+    "LABEL": "MEINE ARBEIT",
+    "TITLE": "Projekte",
+    "JOIN_DESC": "Join ist ein webbasiertes Projektmanagement-Tool inspiriert vom Kanban-System. Es ermöglicht Teams, Aufgaben zu erstellen, zu organisieren und den Fortschritt zu verfolgen – mit übersichtlichem Board-Layout und intuitivem Drag-and-Drop.",
+    "JOIN_TECHS": "HTML | CSS | JavaScript | Firebase",
+    "ELPOLLO_DESC": "El Pollo Loco ist ein 2D Jump-and-Run-Browsergame mit objektorientiertem JavaScript. Der Spieler steuert einen Charakter durch Levels voller Gegner, sammelt Items und bekämpft einen Endboss.",
+    "ELPOLLO_TECHS": "HTML | CSS | JavaScript",
+    "GITHUB": "GitHub",
+    "LIVE": "Live Demo",
+    "COMING_SOON": "Demnächst verfügbar"
+  },
+  "CONTACT": {
+    "LABEL": "KONTAKT",
+    "TITLE": "Lass uns reden!",
+    "SUBTITLE": "Hast du ein Projekt im Kopf oder möchtest du einfach Hallo sagen? Schreib mir – ich freue mich von dir zu hören.",
+    "NAME": "Name",
+    "EMAIL": "E-Mail",
+    "MESSAGE": "Deine Nachricht",
+    "PRIVACY_TEXT": "Ich habe die",
+    "PRIVACY_LINK": "Datenschutzerklärung",
+    "PRIVACY_SUFFIX": "gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "SEND": "Nachricht senden",
+    "SUCCESS": "Deine Nachricht wurde erfolgreich gesendet. Ich melde mich bald bei dir!",
+    "ERROR": "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+    "REQUIRED": "Dieses Feld ist erforderlich.",
+    "EMAIL_INVALID": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "MIN_LENGTH": "Bitte gib mindestens 10 Zeichen ein."
+  },
+  "FOOTER": {
+    "MADE_WITH": "Entwickelt von",
+    "IMPRINT": "Impressum",
+    "PRIVACY": "Datenschutz"
+  },
+  "LOADER": {
+    "LOADING": "Laden..."
+  }
+}

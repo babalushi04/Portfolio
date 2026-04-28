@@ -1,0 +1,85 @@
+@use '../../../../styles/variables' as *;
+
+.skills {
+  background: $bg-dark;
+}
+
+.skills-inner {
+  @include section-setup;
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+
+.skills-left {
+  @include flex-column;
+  gap: 20px;
+  flex: 1;
+  max-width: 400px;
+
+  @media (max-width: 900px) { max-width: 100%; }
+}
+
+.section-label { @include section-label; }
+.section-title { @include section-title; }
+
+.skills-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.skills-desc {
+  color: $text-secondary;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  flex: 1;
+
+  @media (max-width: 1100px) { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 500px) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.skill-card {
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 16px;
+  background: $bg-secondary;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  text-align: center;
+  transition: all $transition;
+  cursor: default;
+
+  &:hover {
+    border-color: $border-accent;
+    background: $bg-card;
+    transform: translateY(-4px);
+    box-shadow: $shadow-accent;
+  }
+
+  img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: $text-secondary;
+  }
+}
