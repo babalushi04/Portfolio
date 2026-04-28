@@ -40,7 +40,12 @@
 
   &:hover { color: $accent; }
 
-  @media (max-width: 900px) { display: none; }
+  @media (max-width: 900px) {
+    left: 20px;
+    top: auto;
+    bottom: 80px;
+    transform: none;
+  }
 }
 
 .scroll-circle {
@@ -85,12 +90,16 @@
 }
 
 .hero-name {
-  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-size: clamp(2.8rem, 9vw, 8rem);
   font-weight: 800;
   color: $text-primary;
   letter-spacing: -0.02em;
   line-height: 1;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: clamp(2.2rem, 11vw, 3.5rem);
+  }
 }
 
 .hero-actions {
@@ -131,7 +140,12 @@
   gap: 16px;
   z-index: 2;
 
-  @media (max-width: 900px) { display: none; }
+  @media (max-width: 900px) {
+    right: 20px;
+    top: auto;
+    bottom: 72px;
+    transform: none;
+  }
 }
 
 .side-email {
@@ -145,6 +159,8 @@
   transition: color $transition;
 
   &:hover { color: $accent; }
+
+  @media (max-width: 900px) { display: none; }
 }
 
 .side-divider {
