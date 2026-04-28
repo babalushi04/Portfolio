@@ -184,7 +184,6 @@
   white-space: nowrap;
   width: max-content;
   animation: marquee 40s linear infinite;
-  transform: skewY(2deg);
 
   span {
     font-family: $font-mono;
@@ -195,6 +194,6 @@
 }
 
 @keyframes marquee {
-  from { transform: skewY(2deg) translateX(0); }
-  to   { transform: skewY(2deg) translateX(-50%); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
