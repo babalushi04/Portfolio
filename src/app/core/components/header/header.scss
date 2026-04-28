@@ -185,8 +185,8 @@
   display: none;
   position: absolute;
   top: calc(100% + 8px);
-  right: 20px;
-  width: 190px;
+  right: 16px;
+  width: 160px;
   flex-direction: column;
   background: #0f2420;
   border: 1px solid $border;
@@ -201,19 +201,24 @@
   @media (max-width: 768px) { display: flex; }
 
   &.open {
-    max-height: 340px;
+    max-height: 280px;
     opacity: 1;
     pointer-events: auto;
   }
 
   .nav-link {
-    padding: 18px 24px;
-    font-size: 1rem;
+    padding: 14px 20px;
+    font-size: 0.95rem;
     color: $text-primary;
     border-bottom: 1px solid $border;
+    text-align: center;
+
+    &:last-of-type { border-bottom: none; }
   }
 }
 
 .mobile-lang {
-  padding: 16px 24px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
 }
