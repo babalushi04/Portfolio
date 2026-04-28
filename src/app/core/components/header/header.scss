@@ -46,10 +46,12 @@
   cursor: pointer;
   transition: opacity $transition;
   flex-shrink: 0;
-  order: 2;                      /* right on desktop */
+  order: 2;
+  margin-left: auto;             /* pushes to far right on desktop */
 
   @media (max-width: 768px) {
-    order: 1;                    /* left on mobile */
+    order: 1;
+    margin-left: 0;              /* left on mobile */
   }
 
   &:hover { opacity: 0.8; }
