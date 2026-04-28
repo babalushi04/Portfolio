@@ -166,26 +166,25 @@
 /* ---- Marquee strip (diagonal band) ---- */
 .hero-marquee {
   position: absolute;
-  bottom: -8px;
-  left: -4%;
-  right: -4%;
+  bottom: 0;
+  left: -5%;
+  right: -5%;
   z-index: 2;
-  padding: 16px 0;
+  padding: 15px 0;
   overflow: hidden;
-  background: rgba(4, 14, 11, 0.72);
+  background: rgba(4, 14, 11, 0.8);
   transform: skewY(-2deg);
-  border-top: 1px solid rgba(61, 207, 182, 0.18);
+  transform-origin: bottom left;
+  border-top: 1px solid rgba(61, 207, 182, 0.2);
 }
 
 .marquee-track {
   display: flex;
-  gap: 40px;
+  gap: 48px;
   white-space: nowrap;
-  animation: marquee 35s linear infinite;
   width: max-content;
+  animation: marquee 40s linear infinite;
   transform: skewY(2deg);
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
 
   span {
     font-family: $font-mono;

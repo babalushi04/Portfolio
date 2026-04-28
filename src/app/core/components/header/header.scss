@@ -61,11 +61,18 @@
   &:not(.active):hover { color: $text-primary; }
 }
 
-/* ---- Right side: nav + logo ---- */
+/* ---- Left side: toggle + nav ---- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ---- Right side: logo + hamburger ---- */
 .header-right {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 16px;
 }
 
 /* ---- Nav ---- */
