@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
+  <rect width="600" height="360" fill="#1c1c1c"/>
+  <rect x="20" y="20" width="170" height="320" rx="8" fill="#252525" stroke="#333" stroke-width="1"/>
+  <rect x="210" y="20" width="170" height="320" rx="8" fill="#252525" stroke="#333" stroke-width="1"/>
+  <rect x="400" y="20" width="170" height="320" rx="8" fill="#252525" stroke="#333" stroke-width="1"/>
+  <text x="105" y="48" font-family="Arial" font-size="13" fill="#3dcfb6" text-anchor="middle">To Do</text>
+  <text x="295" y="48" font-family="Arial" font-size="13" fill="#3dcfb6" text-anchor="middle">In Progress</text>
+  <text x="485" y="48" font-family="Arial" font-size="13" fill="#3dcfb6" text-anchor="middle">Done</text>
+  <rect x="32" y="60" width="146" height="60" rx="6" fill="#2a2a2a" stroke="#3dcfb6" stroke-width="1"/>
+  <rect x="32" y="130" width="146" height="50" rx="6" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+  <rect x="32" y="190" width="146" height="70" rx="6" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+  <rect x="222" y="60" width="146" height="80" rx="6" fill="#2a2a2a" stroke="#3dcfb6" stroke-width="1.5"/>
+  <rect x="222" y="150" width="146" height="55" rx="6" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+  <rect x="412" y="60" width="146" height="50" rx="6" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+  <rect x="412" y="120" width="146" height="60" rx="6" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+  <text x="300" y="185" font-family="Arial" font-size="22" fill="#3dcfb6" text-anchor="middle" opacity="0.15">Join</text>
+</svg>

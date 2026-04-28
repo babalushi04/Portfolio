@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360">
+  <rect width="600" height="360" fill="#1c1c1c"/>
+  <rect x="0" y="0" width="600" height="80" fill="#252525"/>
+  <text x="40" y="48" font-family="Arial" font-size="20" fill="#3dcfb6" font-weight="bold">Kochwelt</text>
+  <rect x="20" y="100" width="175" height="240" rx="8" fill="#252525" stroke="#333"/>
+  <rect x="20" y="100" width="175" height="100" rx="8" fill="#2d4a3e"/>
+  <text x="107" y="155" font-family="Arial" font-size="30" text-anchor="middle">🍝</text>
+  <text x="107" y="220" font-family="Arial" font-size="12" fill="#e0e0e0" text-anchor="middle">Pasta Carbonara</text>
+  <rect x="213" y="100" width="175" height="240" rx="8" fill="#252525" stroke="#3dcfb6" stroke-width="1.5"/>
+  <rect x="213" y="100" width="175" height="100" rx="8" fill="#3d2d2a"/>
+  <text x="300" y="155" font-family="Arial" font-size="30" text-anchor="middle">🍕</text>
+  <text x="300" y="220" font-family="Arial" font-size="12" fill="#e0e0e0" text-anchor="middle">Margherita Pizza</text>
+  <rect x="406" y="100" width="175" height="240" rx="8" fill="#252525" stroke="#333"/>
+  <rect x="406" y="100" width="175" height="100" rx="8" fill="#2a3d4a"/>
+  <text x="493" y="155" font-family="Arial" font-size="30" text-anchor="middle">🥗</text>
+  <text x="493" y="220" font-family="Arial" font-size="12" fill="#e0e0e0" text-anchor="middle">Caesar Salad</text>
+</svg>
