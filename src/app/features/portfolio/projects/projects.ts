@@ -39,9 +39,9 @@ export class Projects {
       descKey: 'PROJECTS.ELPOLLO_DESC',
       techs: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/babalushi04/EL-Pollo-Loco',
-      live: '',
+      live: 'https://babalushi04.github.io/EL-Pollo-Loco/',
       image: 'assets/img/projects/elpollo-preview.jpg',
-      displayUrl: 'github.com/babalushi04/EL-Pollo-Loco',
+      displayUrl: 'babalushi04.github.io/EL-Pollo-Loco',
       logoMode: false,
     },
     {
