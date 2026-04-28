@@ -27,7 +27,7 @@ export class Projects {
       techs: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       github: 'https://github.com/babalushi04/join',
       live: '',
-      image: 'assets/img/projects/join-preview.svg',
+      image: 'assets/img/projects/join-preview.jpg',
     },
     {
       number: '02',
@@ -36,7 +36,7 @@ export class Projects {
       techs: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/babalushi04/EL-Pollo-Loco',
       live: '',
-      image: 'assets/img/projects/elpollo-preview.svg',
+      image: 'assets/img/projects/elpollo-preview.jpg',
     },
     {
       number: '03',
@@ -63,7 +63,7 @@ export class Projects {
       techs: ['HTML', 'CSS', 'JavaScript'],
       github: '',
       live: 'https://www.permacare24.com',
-      image: 'assets/img/projects/permacare-preview.svg',
+      image: 'assets/img/projects/permacare-preview.jpg',
     },
   ];
 
