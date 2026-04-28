@@ -9,7 +9,7 @@
   transition: background $transition, box-shadow $transition;
 
   &.scrolled {
-    background: rgba(28, 28, 28, 0.92);
+    background: rgba(12, 26, 23, 0.92);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     box-shadow: 0 1px 0 $border;
@@ -37,6 +37,7 @@
   border-radius: $radius-full;
   padding: 3px;
   gap: 2px;
+  flex-shrink: 0;
 }
 
 .lang-btn {
@@ -60,21 +61,29 @@
   &:not(.active):hover { color: $text-primary; }
 }
 
-/* ---- Nav (center) ---- */
+/* ---- Right side: nav + logo ---- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ---- Nav ---- */
 .nav-desktop {
   display: flex;
-  gap: 40px;
+  gap: 36px;
 
   @media (max-width: 768px) { display: none; }
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: $text-secondary;
   cursor: pointer;
   position: relative;
   transition: color $transition;
+  white-space: nowrap;
 
   &::after {
     content: '';
@@ -93,19 +102,14 @@
   }
 }
 
-/* ---- Logo (right) ---- */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
+/* ---- Logo ---- */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   transition: opacity $transition;
+  flex-shrink: 0;
 
   &:hover { opacity: 0.8; }
 }
@@ -170,7 +174,7 @@
 .nav-mobile {
   display: none;
   flex-direction: column;
-  background: rgba(28, 28, 28, 0.97);
+  background: rgba(12, 26, 23, 0.97);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   max-height: 0;
