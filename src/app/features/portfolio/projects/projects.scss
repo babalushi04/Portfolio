@@ -1,109 +1,70 @@
 @use '../../../../styles/variables' as *;
 
 .projects {
-  background: $bg-secondary;
-}
+  background: $bg-dark;
+  padding: 100px 0 0;
 
-.projects-inner {
-  @include section-setup;
-  @include flex-column;
-  gap: 60px;
+  @media (max-width: 768px) { padding: 60px 0 0; }
 }
 
 .projects-header {
+  @include section-setup;
   @include flex-column;
   gap: 12px;
+  padding-bottom: 48px;
 }
 
 .section-label { @include section-label; }
 .section-title { @include section-title; }
 
-.projects-list {
-  @include flex-column;
-  gap: 48px;
-}
-
+/* ---- Project card ---- */
 .project-card {
+  position: relative;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 60px 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  padding: 40px;
-  background: $bg-card;
-  border: 1px solid $border;
-  border-radius: $radius-lg;
-  transition: border-color $transition;
+  grid-template-rows: auto auto;
+  gap: 0 60px;
+  background: $bg-secondary;
+  border-top: 1px solid $border;
 
-  &:nth-child(even) {
-    direction: rtl;
-    > * { direction: ltr; }
-  }
-
-  &:hover { border-color: $border-accent; }
-
+  @media (max-width: 1200px) { padding: 60px 40px; }
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    direction: ltr !important;
-    > * { direction: ltr !important; }
-    padding: 24px;
-    gap: 24px;
+    padding: 40px 20px;
+    gap: 32px;
   }
 }
 
-.project-image {
-  position: relative;
-  border-radius: $radius-md;
-  overflow: hidden;
-  aspect-ratio: 5 / 3;
-  background: $bg-secondary;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform $transition-slow;
-  }
-
-  &:hover img { transform: scale(1.04); }
-}
-
-.project-image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(28,28,28,0.8) 0%, transparent 60%);
-  @include flex-center;
-  align-items: flex-end;
-  padding: 20px;
-
-  span {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: $text-primary;
-  }
-}
-
-.project-content {
+/* ---- Left column ---- */
+.project-left {
   @include flex-column;
-  gap: 16px;
+  gap: 20px;
+  grid-row: 1;
+  grid-column: 1;
 }
 
-.project-number {
+.project-num {
   font-family: $font-mono;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
-  color: rgba(61, 207, 182, 0.2);
+  color: rgba(61, 207, 182, 0.18);
   line-height: 1;
 }
 
 .project-title {
-  font-size: 1.6rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: $text-primary;
+  line-height: 1.1;
 }
 
-.project-techs {
+.project-what {
   font-family: $font-mono;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: $accent;
   letter-spacing: 0.05em;
 }
@@ -111,20 +72,136 @@
 .project-desc {
   color: $text-secondary;
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.8;
+  max-width: 480px;
 }
 
-.project-links {
+.project-techs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tech-badge {
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  color: $accent;
+  padding: 5px 12px;
+  border: 1px solid $border-accent;
+  border-radius: $radius-full;
+  background: rgba(61, 207, 182, 0.06);
+}
+
+.project-buttons {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 8px;
 }
 
-.coming-soon {
+.coming-soon-badge {
   font-family: $font-mono;
   font-size: 0.8rem;
   color: $text-muted;
-  padding: 12px 0;
-  letter-spacing: 0.05em;
+  padding: 10px 0;
+}
+
+/* ---- Right column ---- */
+.project-right {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 900px) { grid-column: 1; grid-row: 2; }
+}
+
+.project-image-frame {
+  width: 100%;
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 1px solid $border;
+  background: $bg-card;
+  aspect-ratio: 16 / 10;
+  @include flex-center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+
+    &:hover { transform: scale(1.03); }
+  }
+}
+
+/* ---- Next button ---- */
+.project-next {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: end;
+  justify-self: end;
+  background: transparent;
+  border: none;
+  color: $accent;
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 16px 0 0;
+  transition: gap $transition;
+
+  &:hover { gap: 14px; }
+}
+
+/* ---- Dots navigation ---- */
+.projects-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px 60px;
+}
+
+.nav-arrow {
+  background: transparent;
+  border: 1px solid $border;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  @include flex-center;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+.nav-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $border;
+  border: none;
+  cursor: pointer;
+  transition: all $transition;
+  padding: 0;
+
+  &.active {
+    background: $accent;
+    transform: scale(1.3);
+  }
+
+  &:hover { background: $text-secondary; }
 }
