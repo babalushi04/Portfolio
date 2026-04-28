@@ -35,40 +35,26 @@
 
       <div class="form-group" [class.has-error]="isInvalid('name')">
         <label for="name">{{ 'CONTACT.NAME' | translate }}</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          formControlName="name"
-          autocomplete="name"
-          (blur)="onBlur('name')"
-        />
-        <span class="error-msg" *ngIf="isInvalid('name')">{{ getError('name') | translate }}</span>
+        <input id="name" type="text" name="name" formControlName="name" autocomplete="name" (blur)="onBlur('name')" />
+        @if (isInvalid('name')) {
+          <span class="error-msg">{{ getError('name') | translate }}</span>
+        }
       </div>
 
       <div class="form-group" [class.has-error]="isInvalid('email')">
         <label for="email">{{ 'CONTACT.EMAIL' | translate }}</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          formControlName="email"
-          autocomplete="email"
-          (blur)="onBlur('email')"
-        />
-        <span class="error-msg" *ngIf="isInvalid('email')">{{ getError('email') | translate }}</span>
+        <input id="email" type="email" name="email" formControlName="email" autocomplete="email" (blur)="onBlur('email')" />
+        @if (isInvalid('email')) {
+          <span class="error-msg">{{ getError('email') | translate }}</span>
+        }
       </div>
 
       <div class="form-group" [class.has-error]="isInvalid('message')">
         <label for="message">{{ 'CONTACT.MESSAGE' | translate }}</label>
-        <textarea
-          id="message"
-          name="message"
-          formControlName="message"
-          rows="5"
-          (blur)="onBlur('message')"
-        ></textarea>
-        <span class="error-msg" *ngIf="isInvalid('message')">{{ getError('message') | translate }}</span>
+        <textarea id="message" name="message" formControlName="message" rows="5" (blur)="onBlur('message')"></textarea>
+        @if (isInvalid('message')) {
+          <span class="error-msg">{{ getError('message') | translate }}</span>
+        }
       </div>
 
       <div class="form-group form-privacy" [class.has-error]="isInvalid('privacy')">
@@ -81,23 +67,32 @@
             {{ 'CONTACT.PRIVACY_SUFFIX' | translate }}
           </span>
         </label>
-        <span class="error-msg" *ngIf="isInvalid('privacy')">{{ getError('privacy') | translate }}</span>
+        @if (isInvalid('privacy')) {
+          <span class="error-msg">{{ getError('privacy') | translate }}</span>
+        }
       </div>
 
       <button type="submit" class="btn-primary submit-btn" [disabled]="!canSubmit">
-        <span *ngIf="status !== 'sending'">{{ 'CONTACT.SEND' | translate }}</span>
-        <span *ngIf="status === 'sending'">...</span>
-        <svg *ngIf="status !== 'sending'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        @if (status === 'sending') {
+          <span>...</span>
+        } @else {
+          <span>{{ 'CONTACT.SEND' | translate }}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        }
       </button>
 
-      <div class="form-feedback success" *ngIf="status === 'success'">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-        {{ 'CONTACT.SUCCESS' | translate }}
-      </div>
-      <div class="form-feedback error" *ngIf="status === 'error'">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        {{ 'CONTACT.ERROR' | translate }}
-      </div>
+      @if (status === 'success') {
+        <div class="form-feedback success">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          {{ 'CONTACT.SUCCESS' | translate }}
+        </div>
+      }
+      @if (status === 'error') {
+        <div class="form-feedback error">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          {{ 'CONTACT.ERROR' | translate }}
+        </div>
+      }
     </form>
   </div>
 </section>
