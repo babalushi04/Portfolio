@@ -28,9 +28,9 @@ export class Projects {
       descKey: 'PROJECTS.JOIN_DESC',
       techs: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       github: 'https://github.com/babalushi04/join',
-      live: '',
+      live: 'https://babalushi04.github.io/join/',
       image: 'assets/img/projects/join-preview.jpg',
-      displayUrl: 'github.com/babalushi04/join',
+      displayUrl: 'babalushi04.github.io/join',
       logoMode: false,
     },
     {
