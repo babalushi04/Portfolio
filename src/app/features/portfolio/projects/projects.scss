@@ -3,6 +3,7 @@
 .projects {
   background: $bg-dark;
   padding: 100px 0 0;
+  @include section-radial-glow(right);
 
   @media (max-width: 768px) { padding: 60px 0 0; }
 }
@@ -10,6 +11,8 @@
 .projects-header {
   @include section-setup;
   @include flex-column;
+  position: relative;
+  z-index: 1;
   gap: 12px;
   padding-bottom: 48px;
 }
@@ -20,6 +23,7 @@
 /* ---- Project card ---- */
 .project-card {
   position: relative;
+  z-index: 1;
   max-width: $container-max;
   margin: 0 auto;
   padding: 60px 80px;
@@ -52,6 +56,8 @@
   font-weight: 700;
   color: rgba(61, 207, 182, 0.18);
   line-height: 1;
+
+  @media (max-width: 480px) { font-size: 2.5rem; }
 }
 
 .project-title {
@@ -74,6 +80,8 @@
   font-size: 0.95rem;
   line-height: 1.8;
   max-width: 480px;
+
+  @media (max-width: 480px) { font-size: 0.875rem; line-height: 1.7; }
 }
 
 .project-techs {
@@ -83,6 +91,9 @@
 }
 
 .tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: $font-mono;
   font-size: 0.78rem;
   color: $accent;
@@ -90,6 +101,14 @@
   border: 1px solid $border-accent;
   border-radius: $radius-full;
   background: rgba(61, 207, 182, 0.06);
+
+  img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
 }
 
 .project-buttons {
@@ -97,6 +116,12 @@
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 8px;
+
+  @media (max-width: 480px) {
+    gap: 10px;
+
+    a { font-size: 0.875rem; padding: 10px 20px; }
+  }
 }
 
 .coming-soon-badge {
@@ -215,6 +240,8 @@
   justify-content: center;
   gap: 16px;
   padding: 32px 20px 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-arrow {

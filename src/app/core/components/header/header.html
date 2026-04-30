@@ -11,14 +11,17 @@
         <a (click)="scrollTo('about')"    class="nav-link">{{ 'NAV.ABOUT'    | translate }}</a>
         <a (click)="scrollTo('skills')"   class="nav-link">{{ 'NAV.SKILLS'   | translate }}</a>
         <a (click)="scrollTo('projects')" class="nav-link">{{ 'NAV.PROJECTS' | translate }}</a>
-        <a (click)="scrollTo('contact')"  class="nav-link">{{ 'NAV.CONTACT'  | translate }}</a>
       </nav>
     </div>
 
     <!-- Logo: right on desktop, left on mobile via order -->
     <a class="logo" (click)="scrollTo('hero')">
-      <span class="logo-icon">VB</span>
-      <span class="logo-text">Virxhin<br>Bytyqi</span>
+      <span class="logo-name">Virxhin</span>
+      <svg class="logo-brackets" viewBox="0 0 80 48" fill="none" aria-hidden="true">
+        <path class="bracket-path" d="M28 4 L6 24 L28 44"  stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+        <path class="bracket-path" d="M52 4 L74 24 L52 44" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+      </svg>
+      <span class="logo-name">Bytyqi</span>
     </a>
 
     <!-- Hamburger: hidden on desktop, right on mobile -->
@@ -27,17 +30,17 @@
     </button>
 
   </div>
-
-  <!-- Mobile dropdown card (top-right) -->
-  <nav class="nav-mobile" [class.open]="menuOpen">
-    <a (click)="scrollTo('about');    closeMenu()" class="nav-link">{{ 'NAV.ABOUT'    | translate }}</a>
-    <a (click)="scrollTo('skills');   closeMenu()" class="nav-link">{{ 'NAV.SKILLS'   | translate }}</a>
-    <a (click)="scrollTo('projects'); closeMenu()" class="nav-link">{{ 'NAV.PROJECTS' | translate }}</a>
-    <div class="mobile-lang">
-      <div class="lang-pill">
-        <button type="button" class="lang-btn" [class.active]="langService.getCurrentLang() === 'en'" (click)="langService.setLanguage('en')">EN</button>
-        <button type="button" class="lang-btn" [class.active]="langService.getCurrentLang() === 'de'" (click)="langService.setLanguage('de')">DE</button>
-      </div>
-    </div>
-  </nav>
 </header>
+
+<!-- Mobile dropdown card — outside <header> to avoid backdrop-filter containing-block bug -->
+<nav class="nav-mobile" [class.open]="menuOpen">
+  <a (click)="scrollTo('about');    closeMenu()" class="nav-link">{{ 'NAV.ABOUT'    | translate }}</a>
+  <a (click)="scrollTo('skills');   closeMenu()" class="nav-link">{{ 'NAV.SKILLS'   | translate }}</a>
+  <a (click)="scrollTo('projects'); closeMenu()" class="nav-link">{{ 'NAV.PROJECTS' | translate }}</a>
+  <div class="mobile-lang">
+    <div class="lang-pill">
+      <button type="button" class="lang-btn" [class.active]="langService.getCurrentLang() === 'en'" (click)="langService.setLanguage('en')">EN</button>
+      <button type="button" class="lang-btn" [class.active]="langService.getCurrentLang() === 'de'" (click)="langService.setLanguage('de')">DE</button>
+    </div>
+  </div>
+</nav>

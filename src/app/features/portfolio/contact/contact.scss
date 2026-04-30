@@ -2,10 +2,13 @@
 
 .contact {
   background: $bg-dark;
+  @include section-radial-glow(left);
 }
 
 .contact-inner {
   @include section-setup;
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 80px;
@@ -15,6 +18,8 @@
     grid-template-columns: 1fr;
     gap: 48px;
   }
+
+  @media (max-width: 480px) { gap: 32px; }
 }
 
 .contact-info {
@@ -73,26 +78,39 @@
   }
 
   input, textarea {
-    background: $bg-secondary;
-    border: 1.5px solid $border;
-    border-radius: $radius-sm;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(61, 207, 182, 0.4);
+    border-bottom: 1px solid rgba(61, 207, 182, 0.4);
+    border-radius: 0;
     color: $text-primary;
     font-family: $font-primary;
-    font-size: 1rem;
-    padding: 14px 16px;
-    transition: border-color $transition;
+    font-size: 1.1rem;
+    padding: 20px 4px;
+    transition: background $transition, border-color $transition;
     width: 100%;
-    resize: vertical;
+    resize: none;
+    min-height: 60px;
+
+    &::placeholder { color: rgba(217, 217, 217, 0.4); }
 
     &:focus {
       outline: none;
       border-color: $accent;
+      background: rgba(61, 207, 182, 0.03);
     }
+
+    &:hover:not(:focus) { background: rgba(61, 207, 182, 0.02); }
   }
+
+  textarea { min-height: 130px; }
 
   &.has-error {
     label { color: $error; }
-    input, textarea { border-color: $error; }
+    input, textarea {
+      border-top-color: $error;
+      border-bottom-color: $error;
+    }
   }
 }
 
@@ -162,6 +180,8 @@
 
 .submit-btn {
   align-self: flex-start;
+
+  @media (max-width: 480px) { align-self: stretch; justify-content: center; }
 
   &:disabled {
     opacity: 0.5;

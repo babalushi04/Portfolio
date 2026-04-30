@@ -13,7 +13,12 @@
 
       <div class="project-techs">
         @for (t of current.techs; track t) {
-          <span class="tech-badge">{{ t }}</span>
+          <span class="tech-badge">
+            @if (getTechIcon(t)) {
+              <img [src]="getTechIcon(t)" [alt]="t" [title]="t" width="18" height="18" />
+            }
+            {{ t }}
+          </span>
         }
       </div>
 

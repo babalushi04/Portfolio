@@ -6,9 +6,10 @@ $font-mono: 'Fira Code', monospace;
 $bg-dark: #1c1c1c;
 $bg-secondary: #252525;
 $bg-card: #2a2a2a;
+$bg-teal-deep: #08463b;
 $accent: #3dcfb6;
 $accent-hover: #2ab89f;
-$text-primary: #e0e0e0;
+$text-primary: #d9d9d9;
 $text-secondary: #a0a0a0;
 $text-muted: #666;
 $error: #ff4d4d;
@@ -70,10 +71,31 @@ $transition-slow: 0.6s ease;
 }
 
 @mixin glass-panel {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  border: 1px solid $border;
-  border-radius: $radius-md;
+  background: linear-gradient(135deg, rgba(28, 28, 28, 0.7) 0%, rgba(8, 70, 59, 0.3) 100%);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border: 1px solid $border-accent;
+  border-radius: 40px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+@mixin section-radial-glow($side: left) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    @if $side == left { left: -10%; } @else { right: -10%; }
+    top: 50%;
+    transform: translateY(-50%);
+    width: 640px;
+    height: 640px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(61, 207, 182, 0.1) 0%, transparent 70%);
+    filter: blur(64px);
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 @mixin btn-base {

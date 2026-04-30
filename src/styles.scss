@@ -82,14 +82,16 @@ button {
 
 .cursor-glow {
   position: fixed;
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(61, 207, 182, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(61, 207, 182, 0.15) 0%, transparent 70%);
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 0;
-  transition: left 0.08s linear, top 0.08s linear;
+  z-index: 9999;
+  filter: blur(15px);
+  will-change: left, top;
+  transition: left 0.1s linear, top 0.1s linear;
 
   @media (hover: none) {
     display: none;

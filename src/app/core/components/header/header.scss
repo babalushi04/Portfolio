@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
   transition: background $transition, box-shadow $transition;
 
   &.scrolled {
@@ -25,7 +25,7 @@
   gap: 40px;
 
   @media (max-width: 1200px) { padding: 20px 40px; }
-  @media (max-width: 768px)  { padding: 16px 20px; gap: 0; }
+  @media (max-width: 900px)  { padding: 16px 20px; gap: 0; }
 }
 
 /* ---- Desktop: left side (lang + nav) ---- */
@@ -35,53 +35,63 @@
   gap: 32px;
   order: 1;
 
-  @media (max-width: 768px) { display: none; }
+  @media (max-width: 900px) { display: none; }
 }
 
 /* ---- Logo ---- */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   cursor: pointer;
-  transition: opacity $transition;
+  text-decoration: none;
   flex-shrink: 0;
   order: 2;
-  margin-left: auto;             /* pushes to far right on desktop */
+  margin-left: auto;
+  transition: transform $transition;
+  -webkit-tap-highlight-color: transparent;
 
-  @media (max-width: 768px) {
-    order: 1;
-    margin-left: 0;              /* left on mobile */
+  &:hover {
+    transform: scale(1.04);
+    .logo-name { -webkit-text-fill-color: white; }
+    .bracket-path { stroke: white; }
   }
 
-  &:hover { opacity: 0.8; }
+  @media (max-width: 900px) {
+    order: 1;
+    margin-left: 0;
+    gap: 0;
+  }
 }
 
-.logo-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  border: 1.5px solid $accent;
-  background: rgba(61, 207, 182, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: $font-mono;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: $accent;
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
-}
-
-.logo-text {
+.logo-name {
   font-family: $font-primary;
-  font-size: 0.85rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: $text-primary;
-  line-height: 1.25;
+  line-height: 1;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.75) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all $transition;
 
-  @media (max-width: 768px) { display: none; }
+  @media (max-width: 1200px) { font-size: 1.25rem; }
+  @media (max-width: 900px)  { display: none; }
+}
+
+.logo-brackets {
+  height: 32px;
+  width: auto;
+  overflow: visible;
+  flex-shrink: 0;
+
+  .bracket-path {
+    stroke: $accent;
+    transition: stroke $transition;
+  }
+
+  @media (max-width: 900px) { height: 24px; }
 }
 
 /* ---- Hamburger ---- */
@@ -96,10 +106,12 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  order: 3;                      /* always last = right on mobile */
+  order: 3;
   margin-left: auto;
+  position: relative;
+  z-index: 1001;
 
-  @media (max-width: 768px) { display: flex; }
+  @media (max-width: 900px) { display: flex; }
 
   span {
     display: block;
@@ -110,6 +122,7 @@
     transform-origin: center;
   }
 
+  &.open span { background: $accent; }
   &.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   &.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   &.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -180,45 +193,56 @@
   }
 }
 
-/* ---- Mobile dropdown card (Figma style) ---- */
+/* ---- Mobile full-screen overlay ---- */
+/* Lives outside <header> in the template to avoid backdrop-filter containing-block bug */
 .nav-mobile {
   display: none;
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 16px;
-  width: 160px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   flex-direction: column;
-  background: #0f2420;
-  border: 1px solid $border;
-  border-radius: 14px;
-  overflow: hidden;
-  max-height: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  background: $bg-dark;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 998;
+  visibility: hidden;
   opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
-  transition: max-height 0.35s ease, opacity 0.25s ease;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
 
-  @media (max-width: 768px) { display: flex; }
+  @media (max-width: 900px) { display: flex; }
+  @media (max-width: 450px) { gap: 32px; }
 
   &.open {
-    max-height: 280px;
+    transform: translateY(0);
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
   }
 
   .nav-link {
-    padding: 14px 20px;
-    font-size: 0.95rem;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: $text-primary;
-    border-bottom: 1px solid $border;
     text-align: center;
+    border-bottom: none;
+    padding: 0;
+    transition: color $transition;
+    -webkit-tap-highlight-color: transparent;
 
-    &:last-of-type { border-bottom: none; }
+    &:hover { color: $accent; }
+
+    @media (max-width: 450px) { font-size: 2rem; }
   }
 }
 
 .mobile-lang {
-  padding: 12px 20px;
   display: flex;
   justify-content: center;
 }

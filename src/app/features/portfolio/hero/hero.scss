@@ -2,24 +2,26 @@
 
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: 100svh;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #0c1a17;
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+
+  @media (max-width: 480px) {
+    padding-bottom: 52px;
+  }
 }
 
-/* ---- Teal radial glow ---- */
+/* ---- Subtle radial glow overlay ---- */
 .hero-glow {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 90% 70% at 50% 45%,
-      rgba(61, 207, 182, 0.22) 0%,
-      rgba(61, 207, 182, 0.06) 40%,
-      transparent 70%);
+  background: radial-gradient(ellipse 70% 60% at 60% 50%,
+    rgba(61, 207, 182, 0.12) 0%,
+    transparent 65%);
   pointer-events: none;
 }
 
@@ -43,8 +45,14 @@
   @media (max-width: 900px) {
     left: 20px;
     top: auto;
-    bottom: 18%;
+    bottom: 90px;
     transform: none;
+  }
+
+  @media (max-width: 480px) {
+    display: flex;
+    left: 16px;
+    bottom: 0;
   }
 }
 
@@ -65,6 +73,7 @@
   background: linear-gradient(to bottom, currentColor, transparent);
 
   @media (max-width: 900px) { height: 50px; }
+  @media (max-width: 480px) { height: 150px; }
 }
 
 @keyframes bounce {
@@ -84,26 +93,36 @@
   padding: 0 100px;
 
   @media (max-width: 900px) { padding: 0 60px; gap: 18px; }
-  @media (max-width: 480px) { padding: 0 20px; gap: 16px; }
+  @media (max-width: 480px) { padding: 0 12px; gap: 12px; }
 }
 
 .hero-role {
   font-family: $font-mono;
-  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 400;
   color: $text-secondary;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.05em;
+
+  @media (max-width: 480px) { font-size: clamp(0.95rem, 4vw, 1.25rem); }
 }
 
 .hero-name {
-  font-size: clamp(3.5rem, 7vw, 8rem);
-  font-weight: 800;
+  font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+  font-weight: 700;
   color: $text-primary;
   letter-spacing: -0.02em;
   line-height: 1;
   margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.3));
 
-  @media (max-width: 900px) { font-size: clamp(2.5rem, 9vw, 4rem); }
-  @media (max-width: 480px) { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+  @media (max-width: 900px) { font-size: clamp(2.5rem, 9vw, 4.5rem); white-space: normal; }
+  @media (max-width: 480px) { font-size: clamp(2rem, 8.5vw, 3rem); }
 }
 
 .hero-actions {
@@ -152,9 +171,24 @@
   @media (max-width: 900px) {
     right: 16px;
     top: auto;
-    bottom: 18%;
+    bottom: 90px;
     transform: none;
     gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    right: 16px;
+    bottom: 0;
+    gap: 24px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, $text-muted, transparent);
+      align-self: center;
+    }
   }
 }
 
@@ -181,6 +215,16 @@
   @media (max-width: 900px) { display: none; }
 }
 
+.side-email-icon {
+  display: none;
+
+  @media (max-width: 900px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .side-icon {
   color: $text-secondary;
   transition: color $transition, transform $transition;
@@ -204,6 +248,15 @@
   transform: skewY(-2deg);
   transform-origin: bottom left;
   border-top: 1px solid rgba(61, 207, 182, 0.2);
+
+  @media (max-width: 480px) {
+    left: -5%;
+    right: -5%;
+    transform: rotate(-3deg);
+    transform-origin: center;
+    padding: 12px 0;
+    bottom: 12px;
+  }
 }
 
 .marquee-track {

@@ -79,6 +79,23 @@ export class Projects {
     },
   ];
 
+  private techIcons: Record<string, string> = {
+    'HTML':           'assets/img/skills/html.svg',
+    'CSS':            'assets/img/skills/css.svg',
+    'JavaScript':     'assets/img/skills/javascript.svg',
+    'TypeScript':     'assets/img/skills/typescript.svg',
+    'Angular':        'assets/img/skills/angular.svg',
+    'Firebase':       'assets/img/skills/firebase.svg',
+    'Git':            'assets/img/skills/git.svg',
+    'Scrum':          'assets/img/skills/scrum.svg',
+    'REST API':       'assets/img/skills/rest-api.svg',
+    'Material Design':'assets/img/skills/material-design.svg',
+  };
+
+  getTechIcon(tech: string): string {
+    return this.techIcons[tech] ?? '';
+  }
+
   get current(): Project {
     return this.projects[this.currentIndex];
   }

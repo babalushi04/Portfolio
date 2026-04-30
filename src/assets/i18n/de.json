@@ -72,7 +72,8 @@
   "FOOTER": {
     "MADE_WITH": "Entwickelt von",
     "IMPRINT": "Impressum",
-    "PRIVACY": "Datenschutz"
+    "PRIVACY": "Datenschutz",
+    "BASED": "Based in Zeitlarn, DE"
   },
   "LOADER": {
     "LOADING": "Laden..."
