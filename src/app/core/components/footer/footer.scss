@@ -3,6 +3,7 @@
 .footer {
   border-top: 1px solid $border;
   background: $bg-dark;
+  padding: 24px 0;
   position: relative;
   z-index: 1;
 }
@@ -10,35 +11,34 @@
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto auto;
   align-items: center;
   max-width: $container-max;
   margin: 0 auto;
-  padding: 32px 80px;
-  row-gap: 24px;
+  padding: 0 32px;
+  min-height: 126px;
 
-  @media (max-width: 1200px) { padding: 28px 40px; }
+  @media (max-width: 1200px) { padding: 0 40px; }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
-    padding: 28px 20px;
-    gap: 20px;
+    padding: 40px 20px;
+    gap: 32px;
     text-align: center;
     justify-items: center;
   }
 }
 
-/* ---- Logo (left on desktop, center on mobile) ---- */
+/* ---- Logo (left) ---- */
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
   transition: transform $transition;
   -webkit-tap-highlight-color: transparent;
 
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.05);
     .footer-name { -webkit-text-fill-color: white; }
     .footer-bracket-path { stroke: white; }
   }
@@ -46,10 +46,10 @@
 
 .footer-name {
   font-family: $font-primary;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 1;
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.75) 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -58,13 +58,14 @@
 }
 
 .footer-brackets {
-  height: 28px;
+  height: 24px;
   width: auto;
   overflow: visible;
   flex-shrink: 0;
 
   .footer-bracket-path {
     stroke: $accent;
+    fill: none;
     transition: stroke $transition;
   }
 }
@@ -73,7 +74,13 @@
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 12px;
+  justify-self: start;
+
+  @media (max-width: 800px) {
+    align-items: center;
+    order: 1;
+  }
 }
 
 .footer-tagline {
@@ -83,55 +90,39 @@
   letter-spacing: 0.04em;
 }
 
-/* ---- Copyright (center) ---- */
+/* ---- Copyright (center) — teal Fira Code, matches reference ---- */
 .footer-copy {
-  font-size: 0.875rem;
-  color: $text-muted;
+  font-family: $font-mono;
+  font-size: 1.25rem;
+  color: $accent;
   text-align: center;
   justify-self: center;
+
+  @media (max-width: 800px) { order: 3; }
 }
 
-/* ---- Legal links (right on desktop) ---- */
+/* ---- Links (right) — vertical column ---- */
 .footer-links {
   display: flex;
-  gap: 28px;
+  flex-direction: column;
+  gap: 16px;
   justify-self: end;
+  align-items: flex-end;
 
-  @media (max-width: 768px) { justify-self: center; }
+  @media (max-width: 800px) {
+    justify-self: center;
+    align-items: center;
+    order: 2;
+  }
 
   a {
     font-size: 0.9rem;
     color: $text-secondary;
-    transition: color $transition;
+    transition: color $transition, transform $transition;
 
-    &:hover { color: $accent; }
-  }
-}
-
-/* ---- Social icons (bottom row, spans all columns) ---- */
-.footer-social {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.footer-social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: $text-muted;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: color $transition, border-color $transition, transform $transition;
-
-  &:hover {
-    color: $accent;
-    border-color: $accent;
-    transform: translateY(-2px);
+    &:hover {
+      color: $accent;
+      transform: scale(1.1);
+    }
   }
 }

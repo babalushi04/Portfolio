@@ -14,39 +14,43 @@
 
     <div class="about-text-col">
       <p class="section-label">{{ 'ABOUT.LABEL' | translate }}</p>
-      <h2 class="section-title">{{ 'ABOUT.TITLE' | translate }}</h2>
+      <div class="about-content-box">
+        <h2 class="section-title">{{ 'ABOUT.TITLE' | translate }}</h2>
 
-      <p class="about-para">{{ 'ABOUT.TEXT_1' | translate }}</p>
-      <p class="about-para">{{ 'ABOUT.TEXT_2' | translate }}</p>
-
-      <div class="about-info-grid">
-        <div class="info-card">
-          <div class="info-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <div>
-            <strong>{{ 'ABOUT.INFO_LEARNING' | translate }}</strong>
-            <p>{{ 'ABOUT.INFO_LEARNING_DESC' | translate }}</p>
-          </div>
+        <div class="about-description">
+          <p class="about-para">{{ 'ABOUT.TEXT_1' | translate }}</p>
+          <p class="about-para">{{ 'ABOUT.TEXT_2' | translate }}</p>
         </div>
 
-        <div class="info-card">
-          <div class="info-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <div class="about-info-grid">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div>
+              <strong>{{ 'ABOUT.INFO_LEARNING' | translate }}</strong>
+              <p>{{ 'ABOUT.INFO_LEARNING_DESC' | translate }}</p>
+            </div>
           </div>
-          <div>
-            <strong>{{ 'ABOUT.INFO_QUALITY' | translate }}</strong>
-            <p>{{ 'ABOUT.INFO_QUALITY_DESC' | translate }}</p>
-          </div>
-        </div>
 
-        <div class="info-card">
-          <div class="info-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <strong>{{ 'ABOUT.INFO_QUALITY' | translate }}</strong>
+              <p>{{ 'ABOUT.INFO_QUALITY_DESC' | translate }}</p>
+            </div>
           </div>
-          <div>
-            <strong>{{ 'ABOUT.INFO_LOCATION' | translate }}</strong>
-            <p>{{ 'ABOUT.INFO_LOCATION_DESC' | translate }}</p>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>{{ 'ABOUT.INFO_LOCATION' | translate }}</strong>
+              <p>{{ 'ABOUT.INFO_LOCATION_DESC' | translate }}</p>
+            </div>
           </div>
         </div>
       </div>

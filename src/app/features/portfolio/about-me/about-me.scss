@@ -1,8 +1,11 @@
 @use '../../../../styles/variables' as *;
 
 .about {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   background: $bg-dark;
-  @include section-radial-glow(right);
+  position: relative;
 }
 
 .about-inner {
@@ -11,19 +14,15 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 120px;
+  padding: 120px 80px 60px;
 
-  @media (max-width: 900px) {
-    flex-direction: column;
-    gap: 48px;
-  }
-
-  @media (max-width: 480px) {
-    gap: 0;
-    align-items: stretch;
-  }
+  @media (max-width: 1200px) { padding: 120px 40px 60px; gap: 80px; }
+  @media (max-width: 1024px) { gap: 48px; }
+  @media (max-width: 800px)  { flex-direction: column; gap: 48px; padding: 80px 20px 40px; }
 }
 
+/* ---- Image column ---- */
 .about-image-col {
   flex-shrink: 0;
 }
@@ -31,11 +30,10 @@
 .about-image-wrapper {
   position: relative;
   width: 380px;
-  height: 440px;
+  max-width: 400px;
 
-  @media (max-width: 1100px) { width: 300px; height: 360px; }
-  @media (max-width: 900px) { width: 260px; height: 300px; }
-  @media (max-width: 480px) { width: 100%; height: 240px; }
+  @media (max-width: 1100px) { width: 300px; }
+  @media (max-width: 800px)  { width: 280px; }
 }
 
 .about-image-deco {
@@ -51,12 +49,14 @@
 }
 
 .about-image-frame {
-  position: absolute;
-  inset: 0;
-  border-radius: $radius-lg;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 40px;
   overflow: hidden;
   background: $bg-card;
   border: 1px solid $border;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 
   img {
     width: 100%;
@@ -68,7 +68,8 @@
 .about-image-placeholder {
   width: 100%;
   height: 100%;
-  @include flex-column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -76,62 +77,63 @@
   font-size: 0.875rem;
 }
 
+/* ---- Text column ---- */
 .about-text-col {
-  @include flex-column;
-  gap: 20px;
-  flex: 1;
-
-  @media (max-width: 480px) {
-    gap: 14px;
-    background: $bg-card;
-    border: 1px solid $border-accent;
-    border-radius: $radius-lg;
-    padding: 24px 18px;
-    margin-top: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1.2;
 }
 
 .section-label {
   @include section-label;
 }
 
+/* ---- Glass panel content box ---- */
+.about-content-box {
+  @include glass-panel;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+
+  @media (max-width: 450px) { padding: 24px 16px; gap: 24px; }
+}
+
 .section-title {
   @include section-title;
+}
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .about-para {
   color: $text-secondary;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.5;
+  text-align: start;
 }
 
 .about-info-grid {
-  @include flex-column;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  margin-top: 8px;
 }
 
-.info-card {
+.info-item {
   display: flex;
+  align-items: center;
   gap: 16px;
-  align-items: flex-start;
-  padding: 16px 20px;
-  background: rgba(28, 28, 28, 0.6);
-  border: 1px solid $border;
-  border-radius: $radius-md;
-  transition: border-color $transition, box-shadow $transition, transform $transition;
-
-  &:hover {
-    border-color: $border-accent;
-    box-shadow: 0 0 20px rgba(61, 207, 182, 0.1);
-    transform: translateY(-2px);
-  }
 
   strong {
     display: block;
     color: $text-primary;
     font-size: 0.95rem;
     margin-bottom: 4px;
+    line-height: 1.2;
   }
 
   p {
@@ -139,20 +141,18 @@
     font-size: 0.875rem;
     line-height: 1.5;
     margin: 0;
+    text-align: left;
   }
 
-  @media (max-width: 480px) {
-    padding: 12px 14px;
-    gap: 12px;
-  }
+  @media (max-width: 800px) { justify-content: flex-start; }
 }
 
 .info-icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: $radius-sm;
-  background: rgba(61, 207, 182, 0.1);
-  @include flex-center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: $accent;
 }

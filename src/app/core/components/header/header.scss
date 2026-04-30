@@ -5,79 +5,80 @@
   top: 0;
   left: 0;
   right: 0;
+  height: 104px;
   z-index: 1000;
   transition: background $transition, box-shadow $transition;
 
   &.scrolled {
-    background: rgba(12, 26, 23, 0.92);
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
+    background: rgba(12, 26, 23, 0.95);
     box-shadow: 0 1px 0 $border;
   }
+
+  @media (max-width: 1024px) { height: 80px; }
 }
 
 .header-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: $container-max;
   margin: 0 auto;
-  padding: 20px 80px;
-  gap: 40px;
+  padding: 0 32px;
+  height: 100%;
 
-  @media (max-width: 1200px) { padding: 20px 40px; }
-  @media (max-width: 900px)  { padding: 16px 20px; gap: 0; }
+  @media (max-width: 1024px) { padding: 0 16px; }
 }
 
-/* ---- Desktop: left side (lang + nav) ---- */
+/* ---- Desktop: left side (lang toggle + nav) ---- */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   order: 1;
+  z-index: 1001;
 
-  @media (max-width: 900px) { display: none; }
+  @media (max-width: 1024px) { display: none; }
 }
 
 /* ---- Logo ---- */
 .logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   cursor: pointer;
   text-decoration: none;
   flex-shrink: 0;
   order: 2;
-  margin-left: auto;
   transition: transform $transition;
   -webkit-tap-highlight-color: transparent;
+  z-index: 1001;
 
   &:hover {
-    transform: scale(1.04);
-    .logo-name { -webkit-text-fill-color: white; }
+    transform: scale(1.05);
+    .logo-name    { -webkit-text-fill-color: white; }
     .bracket-path { stroke: white; }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     order: 1;
-    margin-left: 0;
-    gap: 0;
+    gap: 8px;
   }
 }
 
 .logo-name {
   font-family: $font-primary;
-  font-size: 1.5rem;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1;
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.75) 100%);
+  white-space: nowrap;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
   transition: all $transition;
 
-  @media (max-width: 1200px) { font-size: 1.25rem; }
-  @media (max-width: 900px)  { display: none; }
+  @media (max-width: 1024px) { font-size: clamp(16px, 5.5vw, 24px); }
 }
 
 .logo-brackets {
@@ -88,113 +89,118 @@
 
   .bracket-path {
     stroke: $accent;
+    fill: none;
     transition: stroke $transition;
   }
 
-  @media (max-width: 900px) { height: 24px; }
+  @media (max-width: 1024px) { height: clamp(16px, 5.5vw, 24px); }
 }
 
 /* ---- Hamburger ---- */
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: center;
-  gap: 5px;
+  justify-content: space-between;
   width: 32px;
-  height: 32px;
+  height: 24px;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
   order: 3;
-  margin-left: auto;
   position: relative;
   z-index: 1001;
 
-  @media (max-width: 900px) { display: flex; }
+  @media (max-width: 1024px) { display: flex; }
 
   span {
     display: block;
-    height: 2px;
-    background: $text-primary;
-    border-radius: 2px;
-    transition: all $transition;
-    transform-origin: center;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all $transition ease-in-out;
+    transform-origin: left center;
   }
 
   &.open span { background: $accent; }
-  &.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  &.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  &.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  &.open span:nth-child(1) { transform: rotate(45deg); }
+  &.open span:nth-child(2) { width: 0; opacity: 0; }
+  &.open span:nth-child(3) { transform: rotate(-45deg); }
 }
 
-/* ---- Language pill ---- */
-.lang-pill {
+/* ---- Language toggle (slider design) ---- */
+.language-toggle {
+  cursor: pointer;
+  z-index: 1001;
+
+  @media (max-width: 1024px) { transform: scale(1.3); }
+}
+
+.lang-slider-btn {
+  position: relative;
+  width: 88px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid $accent;
+  border-radius: 100px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid $border;
-  border-radius: $radius-full;
-  padding: 3px;
-  gap: 2px;
-  flex-shrink: 0;
+  transition: border-color $transition;
+
+  &:hover { border-color: white; }
 }
 
-.lang-btn {
-  font-family: $font-mono;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: $text-muted;
-  background: transparent;
-  border: none;
-  border-radius: $radius-full;
-  padding: 5px 12px;
-  cursor: pointer;
-  transition: all $transition;
+.lang-slider {
+  position: absolute;
+  width: 48px;
+  height: 32px;
+  left: 2px;
+  border-radius: 24px;
+  background: rgba(61, 207, 182, 0.33);
+  transition: transform $transition;
+  transform: translateX(-4px);
+
+  &.german { transform: translateX(37px); }
+}
+
+.lang-option {
+  position: absolute;
+  font-size: 1.25rem;
+  color: #277466;
+  transition: color $transition;
+  z-index: 1;
+
+  &.de { right: 10px; }
+  &.en { left: 10px; }
 
   &.active {
-    background: $accent;
-    color: #0d1b18;
+    color: white;
+    font-weight: 700;
+    line-height: 1.2;
   }
-
-  &:not(.active):hover { color: $text-primary; }
 }
 
 /* ---- Desktop nav ---- */
 .nav-desktop {
   display: flex;
-  gap: 36px;
+  gap: 24px;
 }
 
 .nav-link {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 400;
   color: $text-secondary;
   cursor: pointer;
-  position: relative;
   transition: color $transition;
   white-space: nowrap;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: $accent;
-    transition: width $transition;
-  }
-
-  &:hover {
-    color: $text-primary;
-    &::after { width: 100%; }
-  }
+  &:hover { color: $accent; }
 }
 
 /* ---- Mobile full-screen overlay ---- */
-/* Lives outside <header> in the template to avoid backdrop-filter containing-block bug */
 .nav-mobile {
   display: none;
   position: fixed;
@@ -202,6 +208,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100svh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -216,8 +223,8 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 
-  @media (max-width: 900px) { display: flex; }
-  @media (max-width: 450px) { gap: 32px; }
+  @media (max-width: 1024px) { display: flex; }
+  @media (max-width: 450px)  { gap: 32px; }
 
   &.open {
     transform: translateY(0);
@@ -229,11 +236,8 @@
   .nav-link {
     font-size: 2.5rem;
     font-weight: 700;
-    color: $text-primary;
+    color: white;
     text-align: center;
-    border-bottom: none;
-    padding: 0;
-    transition: color $transition;
     -webkit-tap-highlight-color: transparent;
 
     &:hover { color: $accent; }

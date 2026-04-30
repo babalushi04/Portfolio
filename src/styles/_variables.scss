@@ -70,13 +70,59 @@ $transition-slow: 0.6s ease;
   }
 }
 
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-border-glow {
+  to { --glow-angle: 360deg; }
+}
+
 @mixin glass-panel {
   background: linear-gradient(135deg, rgba(28, 28, 28, 0.7) 0%, rgba(8, 70, 59, 0.3) 100%);
   -webkit-backdrop-filter: blur(24px);
   backdrop-filter: blur(24px);
   border: 1px solid $border-accent;
   border-radius: 40px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  transition: all $transition;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(
+      from var(--glow-angle),
+      transparent 60%,
+      $accent 95%,
+      #ffffff 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0 0 30px rgba(61, 207, 182, 0.2);
+    transform: translateY(-2px);
+
+    &::before {
+      opacity: 1;
+      animation: spin-border-glow 5.5s linear infinite;
+    }
+  }
 }
 
 @mixin section-radial-glow($side: left) {
@@ -123,8 +169,12 @@ $transition-slow: 0.6s ease;
 }
 
 @mixin section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: $font-mono;
+  font-size: 4rem;
   font-weight: 700;
-  color: $text-primary;
-  line-height: 1.2;
+  color: $accent;
+  line-height: 1;
+
+  @media (max-width: 1024px) { font-size: 3rem; }
+  @media (max-width: 450px)  { font-size: 2.25rem; }
 }
