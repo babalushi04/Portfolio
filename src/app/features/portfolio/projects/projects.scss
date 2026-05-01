@@ -231,6 +231,8 @@
   transition: gap $transition;
 
   &:hover { gap: 14px; }
+
+  @media (max-width: 900px) { display: none; }
 }
 
 /* ---- Dots navigation ---- */
