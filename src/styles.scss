@@ -22,6 +22,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.project-dialog-open {
+  overflow: hidden;
+
+  app-header {
+    display: none;
+  }
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 
   &.hidden {
     opacity: 0;
@@ -33,7 +33,7 @@
   font-weight: 700;
   color: $accent;
   letter-spacing: 0.15em;
-  animation: loaderPulse 0.9s ease-in-out infinite;
+  animation: loaderPulse 0.6s ease-in-out infinite;
 }
 
 .loader-bar {
@@ -51,7 +51,7 @@
   border-radius: $radius-full;
   transform-origin: left;
   transform: scaleX(0);
-  animation: loaderFill 0.85s ease-in-out forwards;
+  animation: loaderFill 0.35s ease-in-out forwards;
 }
 
 @keyframes loaderPulse {

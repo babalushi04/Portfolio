@@ -26,11 +26,4 @@ export class Header {
     this.menuOpen = false;
   }
 
-  scrollTo(id: string): void {
-    this.closeMenu();
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 }

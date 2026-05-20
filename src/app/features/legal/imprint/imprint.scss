@@ -1,18 +1,22 @@
 @use '../../../../styles/variables' as *;
-@use 'sass:color';
 
 .legal-page {
   min-height: 100vh;
-  background: $bg-dark;
-  padding-top: 80px;
+  background: linear-gradient(55.22deg, $bg-dark 36.26%, $bg-teal-deep 93.28%);
+  padding: 120px 0 56px;
+
+  @media (max-width: 768px) {
+    padding: 96px 0 40px;
+  }
 }
 
 .legal-inner {
-  max-width: 800px;
+  width: min(100% - 64px, 1120px);
   margin: 0 auto;
-  padding: 60px 40px 80px;
 
-  @media (max-width: 768px) { padding: 40px 20px 60px; }
+  @media (max-width: 768px) {
+    width: min(100% - 32px, 520px);
+  }
 }
 
 .back-link {
@@ -21,51 +25,79 @@
   gap: 8px;
   color: $text-secondary;
   font-size: 0.9rem;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   transition: color $transition;
 
-  &:hover { color: $accent; }
+  &:hover {
+    color: $accent;
+  }
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 56px;
+  color: $accent;
+  font-family: $font-mono;
+  font-size: clamp(1.8rem, 5vw, 4rem);
   font-weight: 700;
-  color: $text-primary;
-  margin-bottom: 48px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid $border;
+  text-align: center;
+  line-height: 1;
+  overflow-wrap: anywhere;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: clamp(1.45rem, 8vw, 2rem);
+    line-height: 1.15;
+  }
 }
 
 section {
-  margin-bottom: 40px;
+  max-width: 980px;
+  margin-bottom: 28px;
 
   h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: $accent;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    color: $text-primary;
     font-family: $font-mono;
+    font-size: 1.12rem;
+    font-weight: 700;
   }
 
-  p, li {
+  p,
+  li {
     color: $text-secondary;
     font-size: 0.95rem;
-    line-height: 1.8;
-    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+
+  p + p {
+    margin-top: 12px;
   }
 
   ul {
-    padding-left: 20px;
-    margin-bottom: 12px;
-
-    li { margin-bottom: 6px; }
+    padding-left: 18px;
   }
 
   a {
     color: $accent;
     text-decoration: underline;
     text-underline-offset: 3px;
+  }
 
-    &:hover { color: $accent-hover; }
+  @media (max-width: 480px) {
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    p,
+    li {
+      font-size: 0.86rem;
+      line-height: 1.48;
+    }
   }
 }

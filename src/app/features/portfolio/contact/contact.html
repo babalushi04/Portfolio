@@ -9,13 +9,10 @@
     <form
       class="contact-form"
       name="contact"
-      netlify
-      netlify-honeypot="bot-field"
       (ngSubmit)="submit()"
       [formGroup]="form"
       novalidate
     >
-      <input type="hidden" name="form-name" value="contact" />
       <input name="bot-field" class="honeypot" title="bot-field" aria-hidden="true" tabindex="-1" autocomplete="off" />
 
       <div class="form-group" [class.has-error]="isInvalid('name')">

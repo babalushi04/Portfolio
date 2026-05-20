@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnDestroy, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 export interface Project {
   number: string;
@@ -18,8 +19,10 @@ export interface Project {
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
-export class Projects {
+export class Projects implements OnDestroy {
   currentIndex = 0;
+  hoveredIndex: number | null = null;
+  selectedProject: Project | null = null;
 
   projects: Project[] = [
     {
@@ -92,12 +95,22 @@ export class Projects {
     'Material Design':'assets/img/skills/material-design.svg',
   };
 
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2,
+  ) {}
+
   getTechIcon(tech: string): string {
     return this.techIcons[tech] ?? '';
   }
 
   get current(): Project {
     return this.projects[this.currentIndex];
+  }
+
+  get formattedProjectNumber(): string {
+    if (!this.selectedProject) return '';
+    return this.selectedProject.number;
   }
 
   next(): void {
@@ -110,5 +123,26 @@ export class Projects {
 
   goTo(index: number): void {
     this.currentIndex = index;
+  }
+
+  openDialog(index: number): void {
+    this.currentIndex = index;
+    this.selectedProject = this.projects[index];
+    this.renderer.addClass(this.document.body, 'project-dialog-open');
+  }
+
+  closeDialog(): void {
+    this.selectedProject = null;
+    this.renderer.removeClass(this.document.body, 'project-dialog-open');
+  }
+
+  onOverlayClick(event: MouseEvent): void {
+    if (event.target === event.currentTarget) {
+      this.closeDialog();
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.renderer.removeClass(this.document.body, 'project-dialog-open');
   }
 }

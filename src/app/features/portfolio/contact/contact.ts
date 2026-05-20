@@ -2,6 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/DEINE_FORM_ID';
+
+interface ContactFormPayload {
+  name: string;
+  email: string;
+  message: string;
+}
+
 @Component({
   selector: 'app-contact',
   standalone: false,
@@ -49,14 +57,15 @@ export class Contact {
       return;
     }
     this.status = 'sending';
-    const body = new URLSearchParams({
-      'form-name': 'contact',
-      name: this.form.value.name,
-      email: this.form.value.email,
-      message: this.form.value.message,
-    });
-    this.http.post('/', body.toString(), {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+
+    const payload: ContactFormPayload = {
+      name: String(this.form.value.name),
+      email: String(this.form.value.email),
+      message: String(this.form.value.message),
+    };
+
+    this.http.post(FORMSPREE_ENDPOINT, payload, {
+      headers: { Accept: 'application/json' },
       responseType: 'text',
     }).subscribe({
       next: () => {
