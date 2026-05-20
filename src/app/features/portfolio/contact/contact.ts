@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/DEINE_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbdbgpor';
 
 interface ContactFormPayload {
   name: string;
