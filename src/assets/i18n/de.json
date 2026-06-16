@@ -75,6 +75,46 @@
     "PRIVACY": "Datenschutz",
     "BASED": "Based in Zeitlarn, DE"
   },
+  "LEGAL": {
+    "BACK": "Zurück",
+    "IMPRINT": {
+      "TITLE": "Impressum",
+      "INFO_TITLE": "Angaben gemäß § 5 TMG",
+      "COUNTRY": "Deutschland",
+      "CONTACT_TITLE": "Kontakt",
+      "CONTENT_LIABILITY_TITLE": "Haftung für Inhalte",
+      "CONTENT_LIABILITY_1": "Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+      "CONTENT_LIABILITY_2": "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.",
+      "LINK_LIABILITY_TITLE": "Haftung für Links",
+      "LINK_LIABILITY_TEXT": "Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+      "COPYRIGHT_TITLE": "Urheberrecht",
+      "COPYRIGHT_TEXT": "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    },
+    "PRIVACY": {
+      "TITLE": "Datenschutzerklärung",
+      "RESPONSIBLE_TITLE": "1. Verantwortlicher",
+      "DATA_TITLE": "2. Erhebung und Verarbeitung personenbezogener Daten",
+      "DATA_TEXT": "Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang erhoben. In keinem Fall werden die erhobenen Daten verkauft oder aus anderen Gründen an Dritte weitergegeben.",
+      "FORM_TITLE": "3. Kontaktformular",
+      "FORM_TEXT": "Wenn Sie das Kontaktformular auf dieser Website nutzen, werden Ihre Angaben (Name, E-Mail-Adresse und Nachricht) zum Zweck der Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).",
+      "HOSTING_TITLE": "4. Hosting (Netlify)",
+      "HOSTING_TEXT": "Diese Website wird bei Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA gehostet. Beim Besuch der Website werden automatisch Server-Log-Dateien gespeichert, die u. a. IP-Adresse, Datum, Uhrzeit, aufgerufene Seiten und Browser-Informationen enthalten. Weitere Informationen finden Sie in der",
+      "NETLIFY_PRIVACY": "Datenschutzerklärung von Netlify",
+      "FONTS_TITLE": "5. Google Fonts",
+      "FONTS_TEXT": "Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten Google Fonts (Anbieter: Google LLC, USA). Beim Aufruf werden von Ihrem Browser Schriftarten in den Browser-Cache geladen. Dabei wird Ihre IP-Adresse an Google übermittelt. Weitere Informationen finden Sie unter",
+      "RIGHTS_TITLE": "6. Ihre Rechte",
+      "RIGHTS_INTRO": "Sie haben das Recht auf:",
+      "RIGHT_1": "Auskunft über Ihre bei mir gespeicherten Daten (Art. 15 DSGVO)",
+      "RIGHT_2": "Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+      "RIGHT_3": "Löschung Ihrer Daten (Art. 17 DSGVO)",
+      "RIGHT_4": "Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+      "RIGHT_5": "Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)",
+      "RIGHT_6": "Datenübertragbarkeit (Art. 20 DSGVO)",
+      "RIGHTS_CONTACT": "Zur Ausübung dieser Rechte wenden Sie sich bitte per E-Mail an:",
+      "COMPLAINT_TITLE": "7. Beschwerderecht",
+      "COMPLAINT_TEXT": "Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren. Zuständige Aufsichtsbehörde für Bayern ist der Bayerische Landesbeauftragte für den Datenschutz (BayLfD)."
+    }
+  },
   "LOADER": {
     "LOADING": "Laden..."
   }

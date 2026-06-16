@@ -75,6 +75,46 @@
     "PRIVACY": "Privacy Policy",
     "BASED": "Based in Zeitlarn, DE"
   },
+  "LEGAL": {
+    "BACK": "Back",
+    "IMPRINT": {
+      "TITLE": "Legal Notice",
+      "INFO_TITLE": "Information according to § 5 TMG",
+      "COUNTRY": "Germany",
+      "CONTACT_TITLE": "Contact",
+      "CONTENT_LIABILITY_TITLE": "Liability for content",
+      "CONTENT_LIABILITY_1": "As a service provider, I am responsible for my own content on these pages in accordance with § 7 paragraph 1 TMG and general law. According to §§ 8 to 10 TMG, however, I am not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+      "CONTENT_LIABILITY_2": "Obligations to remove or block the use of information under general law remain unaffected. Liability in this regard is only possible from the time I become aware of a specific legal violation. If I become aware of such violations, I will remove the content immediately.",
+      "LINK_LIABILITY_TITLE": "Liability for links",
+      "LINK_LIABILITY_TEXT": "My website contains links to external third-party websites over whose content I have no influence. Therefore, I cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content.",
+      "COPYRIGHT_TITLE": "Copyright",
+      "COPYRIGHT_TEXT": "The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, editing, distribution, or any kind of use outside the limits of copyright law requires the written consent of the respective author or creator."
+    },
+    "PRIVACY": {
+      "TITLE": "Privacy Policy",
+      "RESPONSIBLE_TITLE": "1. Controller",
+      "DATA_TITLE": "2. Collection and processing of personal data",
+      "DATA_TEXT": "Personal data is collected on this website only to the technically necessary extent. Under no circumstances will the collected data be sold or passed on to third parties for other reasons.",
+      "FORM_TITLE": "3. Contact form",
+      "FORM_TEXT": "If you use the contact form on this website, your details (name, email address, and message) will be stored for the purpose of processing your inquiry and for possible follow-up questions. This data will not be passed on without your consent. The legal basis is Art. 6 para. 1 lit. a GDPR (consent).",
+      "HOSTING_TITLE": "4. Hosting (Netlify)",
+      "HOSTING_TEXT": "This website is hosted by Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA. When you visit the website, server log files are automatically stored, including IP address, date, time, visited pages, and browser information. Further information can be found in the",
+      "NETLIFY_PRIVACY": "Netlify Privacy Policy",
+      "FONTS_TITLE": "5. Google Fonts",
+      "FONTS_TEXT": "This site uses Google Fonts (provider: Google LLC, USA) for consistent font display. When you access the site, your browser loads fonts into its cache. Your IP address may be transmitted to Google. Further information can be found at",
+      "RIGHTS_TITLE": "6. Your rights",
+      "RIGHTS_INTRO": "You have the right to:",
+      "RIGHT_1": "Access the data stored about you (Art. 15 GDPR)",
+      "RIGHT_2": "Rectification of incorrect data (Art. 16 GDPR)",
+      "RIGHT_3": "Deletion of your data (Art. 17 GDPR)",
+      "RIGHT_4": "Restriction of processing (Art. 18 GDPR)",
+      "RIGHT_5": "Object to processing (Art. 21 GDPR)",
+      "RIGHT_6": "Data portability (Art. 20 GDPR)",
+      "RIGHTS_CONTACT": "To exercise these rights, please contact me by email at:",
+      "COMPLAINT_TITLE": "7. Right to lodge a complaint",
+      "COMPLAINT_TEXT": "You have the right to lodge a complaint with the competent supervisory authority. The competent supervisory authority for Bavaria is the Bavarian State Commissioner for Data Protection (BayLfD)."
+    }
+  },
   "LOADER": {
     "LOADING": "Loading..."
   }

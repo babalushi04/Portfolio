@@ -13,13 +13,11 @@ export class App {
 
   constructor(private translate: TranslateService) {
     translate.addLangs(['de', 'en']);
-    translate.setDefaultLang('de');
-    translate.use('de');
+    translate.setFallbackLang('de');
+    const savedLang = localStorage.getItem('lang') || 'de';
+    translate.use(savedLang);
   }
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
-    this.cursorX = event.clientX;
-    this.cursorY = event.clientY;
-  }
-}
+    this.

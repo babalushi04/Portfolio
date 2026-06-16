@@ -45,7 +45,7 @@ import { Testimonials } from './features/portfolio/testimonials/testimonials';
         provide: TranslateLoader,
         useClass: TranslateHttpLoader,
       },
-      defaultLanguage: 'de',
+      fallbackLang: 'de',
     }),
   ],
   providers: [

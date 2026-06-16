@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 interface Testimonial {
   quote: string;
@@ -14,8 +16,23 @@ interface Testimonial {
   templateUrl: './testimonials.html',
   styleUrl: './testimonials.scss',
 })
-export class Testimonials {
+export class Testimonials implements OnInit, OnDestroy {
   activeIndex = 0;
+  currentLang = 'de';
+  private langSub!: Subscription;
+
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit(): void {
+    this.currentLang = this.translate.currentLang || 'de';
+    this.langSub = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLang = event.lang;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.langSub?.unsubscribe();
+  }
 
   testimonials: Testimonial[] = [
     {
@@ -69,8 +86,7 @@ export class Testimonials {
   }
 
   getQuote(t: Testimonial): string {
-    const lang = localStorage.getItem('lang') || 'de';
-    return lang === 'en' ? t.quoteEn : t.quote;
+    return this.currentLang === 'en' ? t.quoteEn : t.quote;
   }
 
   prev(): void {
