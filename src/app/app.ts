@@ -20,4 +20,7 @@ export class App {
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
-    this.
+    this.cursorX = event.clientX;
+    this.cursorY = event.clientY;
+  }
+}
