@@ -23,7 +23,7 @@ export class Skills {
     { name: 'Scrum',          icon: 'assets/img/skills/scrum.svg' },
     { name: 'REST API',       icon: 'assets/img/skills/rest-api.svg' },
     { name: 'Material Design',icon: 'assets/img/skills/material-design.svg' },
-    { name: 'Growth Mindset', icon: 'assets/img/skills/9. Growth Mindset interaction-skill.mobile.jpg' },
+    { name: 'Growth Mindset', icon: 'assets/img/skills/growthMindset.png' },
   ];
 
   scrollTo(id: string): void {
