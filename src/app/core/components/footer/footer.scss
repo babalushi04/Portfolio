@@ -86,7 +86,7 @@
 
 .footer-tagline {
   font-family: $font-mono;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: $text-muted;
   letter-spacing: 0.04em;
 }
@@ -117,7 +117,7 @@
   }
 
   a {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: $text-secondary;
     transition: color $transition, transform $transition;
 

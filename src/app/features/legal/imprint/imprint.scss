@@ -1,7 +1,6 @@
 @use '../../../../styles/variables' as *;
 
 .legal-page {
-  min-height: 100vh;
   background: linear-gradient(55.22deg, $bg-dark 36.26%, $bg-teal-deep 93.28%);
   padding: 120px 0 56px;
 
@@ -24,7 +23,7 @@
   align-items: center;
   gap: 8px;
   color: $text-secondary;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 32px;
   transition: color $transition;
 
@@ -69,7 +68,7 @@ section {
   p,
   li {
     color: $text-secondary;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.55;
   }
 
@@ -96,7 +95,7 @@ section {
 
     p,
     li {
-      font-size: 0.86rem;
+      font-size: 1rem;
       line-height: 1.48;
     }
   }
