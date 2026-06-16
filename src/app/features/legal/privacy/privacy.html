@@ -24,14 +24,18 @@
 
     <section>
       <h2>{{ 'LEGAL.PRIVACY.FORM_TITLE' | translate }}</h2>
-      <p>{{ 'LEGAL.PRIVACY.FORM_TEXT' | translate }}</p>
+      <p>
+        {{ 'LEGAL.PRIVACY.FORM_TEXT' | translate }}
+        <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">{{ 'LEGAL.PRIVACY.FORMSPREE_PRIVACY' | translate }}</a>.
+        {{ 'LEGAL.PRIVACY.FORM_LEGAL' | translate }}
+      </p>
     </section>
 
     <section>
       <h2>{{ 'LEGAL.PRIVACY.HOSTING_TITLE' | translate }}</h2>
       <p>
         {{ 'LEGAL.PRIVACY.HOSTING_TEXT' | translate }}
-        <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">{{ 'LEGAL.PRIVACY.NETLIFY_PRIVACY' | translate }}</a>.
+        <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">{{ 'LEGAL.PRIVACY.HOSTING_PRIVACY' | translate }}</a>.
       </p>
     </section>
 
