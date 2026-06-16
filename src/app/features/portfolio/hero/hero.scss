@@ -79,6 +79,18 @@
   50%       { transform: translateY(4px); }
 }
 
+/* ---- Inner content container (bounds to 1440px on widescreen) ---- */
+.hero-inner {
+  max-width: $container-max;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  z-index: 10;
+}
+
 /* ---- Center content ---- */
 .hero-center {
   position: relative;
@@ -89,8 +101,6 @@
   justify-content: center;
   text-align: center;
   gap: 0;
-  min-height: 100vh;
-  min-height: 100svh;
 }
 
 .hero-title-layout {
