@@ -204,14 +204,17 @@
 .nav-mobile {
   display: none;
   position: fixed;
-  top: 64px;
+  top: 80px; /* matches mobile header height so nothing is hidden behind it */
   right: 16px;
   width: min(210px, calc(100vw - 32px));
   min-height: 210px;
+  max-height: calc(100dvh - 96px); /* never overflow viewport on short screens */
+  overflow-y: auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 22px;
+  padding: 20px 0;
   background: linear-gradient(135deg, rgba(28, 28, 28, 0.98), rgba(8, 70, 59, 0.96));
   border: 1px solid $border-accent;
   border-radius: 0 24px 24px 24px;
