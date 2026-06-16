@@ -22,12 +22,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ---- Project dialog open: lock scroll on both html + body (iOS Safari fix) ---- */
+html.project-dialog-open {
+  overflow: hidden;
+}
+
 body.project-dialog-open {
   overflow: hidden;
 
-  app-header {
-    display: none;
-  }
+  app-header { display: none; }
+  app-footer { display: none; } /* prevent footer from appearing over overlay */
 }
 
 input:-webkit-autofill,

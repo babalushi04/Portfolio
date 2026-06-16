@@ -47,39 +47,6 @@ export class Projects implements OnDestroy {
       displayUrl: 'babalushi04.github.io/EL-Pollo-Loco',
       logoMode: false,
     },
-    {
-      number: '03',
-      title: 'Kochwelt',
-      descKey: 'PROJECTS.KOCHWELT_DESC',
-      techs: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-      github: 'https://github.com/babalushi04/kochwelt',
-      live: '',
-      image: 'assets/img/projects/kochwelt-preview.svg',
-      displayUrl: 'github.com/babalushi04/kochwelt',
-      logoMode: false,
-    },
-    {
-      number: '04',
-      title: 'Clearifix',
-      descKey: 'PROJECTS.CLEARIFIX_DESC',
-      techs: ['HTML', 'CSS', 'JavaScript'],
-      github: '',
-      live: 'https://www.clearifix.com',
-      image: 'assets/img/projects/clearifix-preview.jpg',
-      displayUrl: 'clearifix.com',
-      logoMode: true,
-    },
-    {
-      number: '05',
-      title: 'Permacare24',
-      descKey: 'PROJECTS.PERMACARE_DESC',
-      techs: ['HTML', 'CSS', 'JavaScript'],
-      github: '',
-      live: 'https://www.permacare24.com',
-      image: 'assets/img/projects/permacare-preview.jpg',
-      displayUrl: 'permacare24.com',
-      logoMode: true,
-    },
   ];
 
   private techIcons: Record<string, string> = {
@@ -129,11 +96,13 @@ export class Projects implements OnDestroy {
     this.currentIndex = index;
     this.selectedProject = this.projects[index];
     this.renderer.addClass(this.document.body, 'project-dialog-open');
+    this.renderer.addClass(this.document.documentElement, 'project-dialog-open');
   }
 
   closeDialog(): void {
     this.selectedProject = null;
     this.renderer.removeClass(this.document.body, 'project-dialog-open');
+    this.renderer.removeClass(this.document.documentElement, 'project-dialog-open');
   }
 
   onOverlayClick(event: MouseEvent): void {
@@ -144,5 +113,6 @@ export class Projects implements OnDestroy {
 
   ngOnDestroy(): void {
     this.renderer.removeClass(this.document.body, 'project-dialog-open');
+    this.renderer.removeClass(this.document.documentElement, 'project-dialog-open');
   }
 }
