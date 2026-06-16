@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnDestroy } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbdbgpor';
@@ -16,15 +16,21 @@ interface ContactFormPayload {
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
-export class Contact {
+export class Contact implements OnDestroy {
   form: FormGroup;
   status: 'idle' | 'sending' | 'success' | 'error' = 'idle';
+  private successTimer: ReturnType<typeof setTimeout> | null = null;
+
+  static noWhitespace(control: AbstractControl): ValidationErrors | null {
+    const v = control.value as string;
+    return v && v.trim().length === 0 ? { whitespace: true } : null;
+  }
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.form = this.fb.group({
-      name:    ['', [Validators.required, Validators.minLength(2)]],
+      name:    ['', [Validators.required, Validators.minLength(2), Contact.noWhitespace]],
       email:   ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(10)]],
+      message: ['', [Validators.required, Validators.minLength(10), Contact.noWhitespace]],
       privacy: [false, Validators.requiredTrue],
     });
   }
@@ -41,27 +47,21 @@ export class Contact {
   getError(field: string): string {
     const ctrl = this.form.get(field);
     if (!ctrl || !ctrl.touched || ctrl.valid) return '';
-    if (ctrl.hasError('required') || ctrl.hasError('requiredTrue')) return 'CONTACT.REQUIRED';
+    if (ctrl.hasError('required') || ctrl.hasError('requiredTrue') || ctrl.hasError('whitespace')) return 'CONTACT.REQUIRED';
     if (ctrl.hasError('email')) return 'CONTACT.EMAIL_INVALID';
     if (ctrl.hasError('minlength')) return 'CONTACT.MIN_LENGTH';
     return '';
   }
 
-  get canSubmit(): boolean {
-    return this.form.valid && this.status !== 'sending';
-  }
-
   submit(): void {
-    if (!this.canSubmit) {
-      this.form.markAllAsTouched();
-      return;
-    }
+    this.form.markAllAsTouched();
+    if (!this.form.valid || this.status === 'sending') return;
     this.status = 'sending';
 
     const payload: ContactFormPayload = {
-      name: String(this.form.value.name),
-      email: String(this.form.value.email),
-      message: String(this.form.value.message),
+      name:    (this.form.value.name as string).trim(),
+      email:   (this.form.value.email as string).trim(),
+      message: (this.form.value.message as string).trim(),
     };
 
     this.http.post(FORMSPREE_ENDPOINT, payload, {
@@ -71,10 +71,15 @@ export class Contact {
       next: () => {
         this.status = 'success';
         this.form.reset();
+        this.successTimer = setTimeout(() => { this.status = 'idle'; }, 5000);
       },
       error: () => {
         this.status = 'error';
       },
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.successTimer) clearTimeout(this.successTimer);
   }
 }

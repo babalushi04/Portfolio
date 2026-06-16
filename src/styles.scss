@@ -111,6 +111,30 @@ button {
   }
 }
 
+/* ---- Scroll reveal animations ---- */
+.reveal-hidden {
+  opacity: 0;
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  will-change: opacity, transform;
+
+  &.reveal-from-left  { transform: translateX(-48px); }
+  &.reveal-from-right { transform: translateX(48px); }
+  &.reveal-from-up    { transform: translateY(36px); }
+
+  &.reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

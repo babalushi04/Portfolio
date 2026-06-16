@@ -19,6 +19,7 @@ import { Contact } from './features/portfolio/contact/contact';
 import { Imprint } from './features/legal/imprint/imprint';
 import { Privacy } from './features/legal/privacy/privacy';
 import { Testimonials } from './features/portfolio/testimonials/testimonials';
+import { RevealDirective } from './core/directives/reveal.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { Testimonials } from './features/portfolio/testimonials/testimonials';
     Imprint,
     Privacy,
     Testimonials,
+    RevealDirective,
   ],
   imports: [
     BrowserModule,

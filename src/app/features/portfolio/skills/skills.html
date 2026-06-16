@@ -1,6 +1,6 @@
 <section class="skills" id="skills">
   <div class="skills-inner">
-    <div class="skills-left">
+    <div class="skills-left" appReveal="left">
       <p class="section-label">{{ 'SKILLS.LABEL' | translate }}</p>
       <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
       <p class="skills-subtitle">{{ 'SKILLS.SUBTITLE' | translate }}</p>
@@ -11,7 +11,7 @@
       </a>
     </div>
 
-    <div class="skills-grid">
+    <div class="skills-grid" appReveal="right">
       @for (skill of skills; track skill.name) {
         <div class="skill-card">
           <img [src]="skill.icon" alt="{{ skill.name }}" title="{{ skill.name }}" width="48" height="48" />

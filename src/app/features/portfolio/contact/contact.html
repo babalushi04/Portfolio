@@ -1,6 +1,6 @@
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <div class="contact-info">
+    <div class="contact-info" appReveal="right">
       <p class="section-label">{{ 'CONTACT.LABEL' | translate }}</p>
       <h2 class="section-title">{{ 'CONTACT.TITLE' | translate }}</h2>
       <p class="contact-subtitle">{{ 'CONTACT.SUBTITLE' | translate }}</p>
@@ -18,25 +18,19 @@
       <div class="form-group" [class.has-error]="isInvalid('name')">
         <label for="name">{{ 'CONTACT.NAME' | translate }}</label>
         <input id="name" type="text" name="name" formControlName="name" autocomplete="name" (blur)="onBlur('name')" />
-        @if (isInvalid('name')) {
-          <span class="error-msg">{{ getError('name') | translate }}</span>
-        }
+        <span class="error-msg">{{ getError('name') | translate }}</span>
       </div>
 
       <div class="form-group" [class.has-error]="isInvalid('email')">
         <label for="email">{{ 'CONTACT.EMAIL' | translate }}</label>
         <input id="email" type="email" name="email" formControlName="email" autocomplete="email" (blur)="onBlur('email')" />
-        @if (isInvalid('email')) {
-          <span class="error-msg">{{ getError('email') | translate }}</span>
-        }
+        <span class="error-msg">{{ getError('email') | translate }}</span>
       </div>
 
       <div class="form-group" [class.has-error]="isInvalid('message')">
         <label for="message">{{ 'CONTACT.MESSAGE' | translate }}</label>
         <textarea id="message" name="message" formControlName="message" rows="5" (blur)="onBlur('message')"></textarea>
-        @if (isInvalid('message')) {
-          <span class="error-msg">{{ getError('message') | translate }}</span>
-        }
+        <span class="error-msg">{{ getError('message') | translate }}</span>
       </div>
 
       <div class="form-group form-privacy" [class.has-error]="isInvalid('privacy')">
@@ -49,12 +43,10 @@
             {{ 'CONTACT.PRIVACY_SUFFIX' | translate }}
           </span>
         </label>
-        @if (isInvalid('privacy')) {
-          <span class="error-msg">{{ getError('privacy') | translate }}</span>
-        }
+        <span class="error-msg">{{ getError('privacy') | translate }}</span>
       </div>
 
-      <button type="submit" class="btn-primary submit-btn" [disabled]="!canSubmit">
+      <button type="submit" class="btn-primary submit-btn" [disabled]="status === 'sending'">
         @if (status === 'sending') {
           <span>...</span>
         } @else {

@@ -1,13 +1,13 @@
 <section class="projects" id="projects">
   <div class="projects-inner">
     <p class="section-label">{{ 'PROJECTS.LABEL' | translate }}</p>
-    <div class="projects-header">
+    <div class="projects-header" appReveal="up">
       <h2 class="section-title">{{ 'PROJECTS.TITLE' | translate }}</h2>
       <p>{{ 'PROJECTS.SUBTITLE' | translate }}</p>
     </div>
 
     <div class="projects-content">
-      <div class="projects-list">
+      <div class="projects-list" appReveal="left">
         @for (project of projects; track project.number; let i = $index) {
           <button
             type="button"
