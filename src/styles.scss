@@ -22,6 +22,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ---- Sticky footer: footer always at bottom on short pages ---- */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+main {
+  flex: 1;
+}
+
 /* ---- Project dialog open: lock scroll on both html + body (iOS Safari fix) ---- */
 html.project-dialog-open {
   overflow: hidden;
