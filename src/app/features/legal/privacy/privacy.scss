@@ -3,6 +3,11 @@
 .legal-page {
   background: linear-gradient(55.22deg, $bg-dark 36.26%, $bg-teal-deep 93.28%);
   padding: 120px 0 56px;
+  min-height: calc(100dvh - 104px);
+
+  @media (max-width: 1024px) {
+    min-height: calc(100dvh - 80px);
+  }
 
   @media (max-width: 768px) {
     padding: 96px 0 40px;
