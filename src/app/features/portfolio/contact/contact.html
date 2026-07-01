@@ -46,7 +46,7 @@
         <span class="error-msg" [style.visibility]="isInvalid('privacy') ? 'visible' : 'hidden'">{{ getError('privacy') | translate }}</span>
       </div>
 
-      <button type="submit" class="btn-primary submit-btn" [disabled]="status === 'sending'">
+      <button type="submit" class="btn-primary submit-btn" [disabled]="form.invalid || status === 'sending'">
         @if (status === 'sending') {
           <span>...</span>
         } @else {

@@ -89,6 +89,8 @@
   justify-content: center;
   align-self: stretch;
   z-index: 10;
+
+  @media (max-width: 450px) { padding: 0 48px; }
 }
 
 /* ---- Center content ---- */

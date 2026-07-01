@@ -3,6 +3,10 @@
 .contact {
   background: $bg-dark;
   @include section-radial-glow(left);
+
+  @media (max-width: 600px) {
+    overflow: hidden;
+  }
 }
 
 .contact-inner {
