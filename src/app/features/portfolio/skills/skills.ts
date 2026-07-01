@@ -13,17 +13,17 @@ interface Skill {
 })
 export class Skills {
   skills: Skill[] = [
-    { name: 'HTML',           icon: 'assets/img/skills/html.svg' },
-    { name: 'CSS',            icon: 'assets/img/skills/css.svg' },
-    { name: 'JavaScript',     icon: 'assets/img/skills/javascript.svg' },
-    { name: 'TypeScript',     icon: 'assets/img/skills/typescript.svg' },
-    { name: 'Angular',        icon: 'assets/img/skills/angular.svg' },
-    { name: 'Firebase',       icon: 'assets/img/skills/firebase.svg' },
-    { name: 'Git',            icon: 'assets/img/skills/git.svg' },
-    { name: 'Scrum',          icon: 'assets/img/skills/scrum.svg' },
-    { name: 'REST API',       icon: 'assets/img/skills/rest-api.svg' },
-    { name: 'Material Design',icon: 'assets/img/skills/material-design.svg' },
-    { name: 'Growth Mindset', icon: 'assets/img/skills/growthMindset.png' },
+    { name: 'HTML',           icon: 'assets/img/skills/Frame 383HTML.svg' },
+    { name: 'CSS',            icon: 'assets/img/skills/Frame 383css.svg' },
+    { name: 'JavaScript',     icon: 'assets/img/skills/Frame 383JS.svg' },
+    { name: 'TypeScript',     icon: 'assets/img/skills/Frame 383TS.svg' },
+    { name: 'Angular',        icon: 'assets/img/skills/Frame 383Angular.svg' },
+    { name: 'Supabase',       icon: 'assets/img/skills/Frame 383supabase.svg' },
+    { name: 'Git',            icon: 'assets/img/skills/Frame 383git.svg' },
+    { name: 'Scrum',          icon: 'assets/img/skills/Frame 383scrum.svg' },
+    { name: 'REST API',       icon: 'assets/img/skills/Frame 383restApi.svg' },
+    { name: 'Material Design',icon: 'assets/img/skills/Frame 383Materialdesign.svg' },
+    { name: 'Growth Mindset', icon: 'assets/img/skills/Frame 383growthmindset.svg' },
   ];
 
   scrollTo(id: string): void {
