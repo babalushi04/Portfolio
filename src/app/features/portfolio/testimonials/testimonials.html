@@ -3,7 +3,7 @@
     <p class="section-label">{{ 'TESTIMONIALS.LABEL' | translate }}</p>
     <h2 class="section-title">{{ 'TESTIMONIALS.TITLE' | translate }}</h2>
 
-    <div class="cards-row">
+    <div class="cards-row" [class.fading]="isFading">
       <!-- Linke Karte (vorherige) -->
       <div class="testimonial-card side-card">
         <div class="quote-icon">&ldquo;</div>

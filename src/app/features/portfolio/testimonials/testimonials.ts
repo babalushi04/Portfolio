@@ -18,8 +18,10 @@ interface Testimonial {
 })
 export class Testimonials implements OnInit, OnDestroy {
   activeIndex = 0;
+  isFading = false;
   currentLang = 'de';
   private langSub!: Subscription;
+  private isAnimating = false;
 
   constructor(private translate: TranslateService) {}
 
@@ -90,14 +92,27 @@ export class Testimonials implements OnInit, OnDestroy {
   }
 
   prev(): void {
-    this.activeIndex = this.prevIndex;
+    this.transition(() => { this.activeIndex = this.prevIndex; });
   }
 
   next(): void {
-    this.activeIndex = this.nextIndex;
+    this.transition(() => { this.activeIndex = this.nextIndex; });
   }
 
   goTo(i: number): void {
-    this.activeIndex = i;
+    if (i !== this.activeIndex) {
+      this.transition(() => { this.activeIndex = i; });
+    }
+  }
+
+  private transition(updateFn: () => void): void {
+    if (this.isAnimating) return;
+    this.isAnimating = true;
+    this.isFading = true;
+    setTimeout(() => {
+      updateFn();
+      this.isFading = false;
+      this.isAnimating = false;
+    }, 180);
   }
 }
