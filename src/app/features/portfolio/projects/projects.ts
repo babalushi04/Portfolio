@@ -50,16 +50,16 @@ export class Projects implements OnDestroy {
   ];
 
   private techIcons: Record<string, string> = {
-    'HTML':           'assets/img/skills/html.svg',
-    'CSS':            'assets/img/skills/css.svg',
-    'JavaScript':     'assets/img/skills/javascript.svg',
-    'TypeScript':     'assets/img/skills/typescript.svg',
-    'Angular':        'assets/img/skills/angular.svg',
-    'Firebase':       'assets/img/skills/firebase.svg',
-    'Git':            'assets/img/skills/git.svg',
-    'Scrum':          'assets/img/skills/scrum.svg',
-    'REST API':       'assets/img/skills/rest-api.svg',
-    'Material Design':'assets/img/skills/material-design.svg',
+    'HTML':           'assets/img/skills/Frame 383HTML.svg',
+    'CSS':            'assets/img/skills/Frame 383css.svg',
+    'JavaScript':     'assets/img/skills/Frame 383JS.svg',
+    'TypeScript':     'assets/img/skills/Frame 383TS.svg',
+    'Angular':        'assets/img/skills/Frame 383Angular.svg',
+    'Supabase':       'assets/img/skills/Frame 383supabase.svg',
+    'Git':            'assets/img/skills/Frame 383git.svg',
+    'Scrum':          'assets/img/skills/Frame 383scrum.svg',
+    'REST API':       'assets/img/skills/Frame 383restApi.svg',
+    'Material Design':'assets/img/skills/Frame 383Materialdesign.svg',
   };
 
   constructor(
