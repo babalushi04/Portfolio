@@ -55,6 +55,7 @@ export class Projects implements OnDestroy {
     'JavaScript':     'assets/img/skills/Frame 383JS.svg',
     'TypeScript':     'assets/img/skills/Frame 383TS.svg',
     'Angular':        'assets/img/skills/Frame 383Angular.svg',
+    'Firebase':       'assets/img/skills/Frame 383firebase.svg',
     'Supabase':       'assets/img/skills/Frame 383supabase.svg',
     'Git':            'assets/img/skills/Frame 383git.svg',
     'Scrum':          'assets/img/skills/Frame 383scrum.svg',
