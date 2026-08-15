@@ -25,6 +25,11 @@
 /* ---- Image column ---- */
 .about-image-col {
   flex-shrink: 0;
+
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .about-image-wrapper {
@@ -53,10 +58,7 @@
 /* ---- Hatching / Schraffierung behind the photo ---- */
 .about-image-hatching {
   position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 110%;
-  height: 110%;
+  inset: -16px;
   z-index: 0;
   border-radius: $radius-lg;
   opacity: 0.35;
@@ -68,6 +70,8 @@
     transparent 1.5px,
     transparent 10px
   );
+
+  @media (max-width: 480px) { display: none; }
 }
 
 .about-image-frame {
