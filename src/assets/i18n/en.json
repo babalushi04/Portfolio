@@ -10,7 +10,14 @@
     "ROLE": "Frontend Developer",
     "CTA_PROJECTS": "My Projects",
     "CTA_CONTACT": "Get in touch",
-    "SCROLL": "Scroll down"
+    "SCROLL": "Scroll down",
+    "MARQUEE": {
+      "REMOTE_WORK": "Available for remote work",
+      "JOB_TITLE": "Frontend Developer",
+      "LOCATION": "Based in Zeitlarn, DE",
+      "OPEN_TO_WORK": "Open to work",
+      "TECH": "Angular · TypeScript · JavaScript"
+    }
   },
   "ABOUT": {
     "LABEL": "WHO I AM",
@@ -29,7 +36,8 @@
     "TITLE": "Skills",
     "SUBTITLE": "What I know",
     "DESC": "I have experience building modern web applications. Through continuous learning, I constantly expand my skill set.",
-    "CTA": "View my projects"
+    "CTA": "View my projects",
+    "TOOLTIP": "What I want to learn next"
   },
   "PROJECTS": {
     "LABEL": "MY WORK",

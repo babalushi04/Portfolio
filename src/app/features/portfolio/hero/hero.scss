@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
   background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
 }
 
@@ -65,7 +65,9 @@
   will-change: transform;
   flex-shrink: 0;
 
-  &:hover { border-color: white; color: white; }
+  @media (hover: hover) {
+    &:hover { border-color: white; color: white; }
+  }
 }
 
 .scroll-line {
@@ -159,6 +161,7 @@
   }
 }
 
+/* ---- Hero buttons — sliding span effect on hover ---- */
 .btn-hero-outline {
   height: 2.5rem;
   border-radius: 100px;
@@ -173,15 +176,28 @@
   font-weight: 400;
   color: white;
   cursor: pointer;
-  transition: all 125ms ease-in-out;
+  transition: border-color 125ms ease-in-out, background-color 125ms ease-in-out, box-shadow 125ms ease-in-out, transform 125ms ease-in-out;
   white-space: nowrap;
+  text-decoration: none;
+  overflow: hidden;
 
-  &:hover {
-    background-color: rgba(61, 207, 182, 0.1);
-    border-color: $accent;
-    color: $accent;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  span {
+    display: inline-block;
+    transition: transform 200ms ease, color 200ms ease;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(61, 207, 182, 0.1);
+      border-color: $accent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+      span {
+        transform: translateX(4px);
+        color: $accent;
+      }
+    }
   }
 
   @media (max-width: 450px) { width: 100%; }
@@ -209,9 +225,12 @@
   color: $text-secondary;
   letter-spacing: 0.08em;
   writing-mode: tb-rl;
+  text-decoration: none;
   transition: color $transition;
 
-  &:hover { color: $accent; }
+  @media (hover: hover) {
+    &:hover { color: $accent; }
+  }
 
   @media (max-width: 800px) { display: none; }
 }
@@ -225,10 +244,13 @@
   color: $text-secondary;
   transition: color $transition, transform $transition;
   flex-shrink: 0;
+  text-decoration: none;
 
-  &:hover {
-    color: $accent;
-    transform: scale(1.1);
+  @media (hover: hover) {
+    &:hover {
+      color: $accent;
+      transform: scale(1.15);
+    }
   }
 }
 
@@ -247,7 +269,7 @@
 /* ---- Marquee strip — bottom ---- */
 .hero-marquee {
   position: absolute;
-  bottom: 54px;
+  bottom: 72px;
   left: -5%;
   width: 110%;
   z-index: 20;
@@ -266,14 +288,15 @@
   mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%);
 
   @media (max-width: 450px) {
-    bottom: 32px;
+    bottom: 48px;
     height: 48px;
   }
 }
 
 .marquee-track {
   display: flex;
-  gap: 48px;
+  align-items: center;
+  gap: 32px;
   white-space: nowrap;
   width: max-content;
   animation: marquee 40s linear infinite;
@@ -281,9 +304,14 @@
 
   span {
     font-family: $font-mono;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: $text-secondary;
     letter-spacing: 0.06em;
+  }
+
+  .marquee-dot {
+    color: $accent;
+    font-size: 0.75rem;
   }
 }
 

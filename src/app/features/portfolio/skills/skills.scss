@@ -67,19 +67,11 @@
 
 .skills-desc {
   color: $text-secondary;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.125rem;
+  line-height: 1.6;
   text-align: start;
 
   @media (max-width: 900px) { text-align: center; }
-}
-
-.skills-cta {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  @media (max-width: 900px) { align-items: center; }
 }
 
 .skills-grid {
@@ -101,20 +93,137 @@
   backface-visibility: hidden;
   cursor: default;
 
-  &:hover {
-    transform: translateY(-10px);
-    img { filter: drop-shadow(0 0 16px rgba(61, 207, 182, 0.5)); }
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-10px);
+
+      img { filter: drop-shadow(0 0 16px rgba(61, 207, 182, 0.5)); }
+    }
   }
 
   img {
     width: 64px;
     height: 64px;
     object-fit: contain;
+    transition: filter $transition;
   }
 
   span {
     font-size: 1rem;
     color: $text-secondary;
     white-space: nowrap;
+  }
+
+  /* ---- Growth Mindset tooltip card ---- */
+  &.has-tooltip {
+    position: relative;
+
+    > span { color: $accent; }
+
+    .skill-tooltip {
+      position: absolute;
+      bottom: calc(100% + 20px);
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 280px;
+      padding: 24px;
+      background: white;
+      border: 2px solid rgba(61, 207, 182, 0.2);
+      border-radius: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition, visibility $transition, transform $transition;
+      pointer-events: none;
+
+      .tooltip-text {
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        color: $accent;
+        text-align: center;
+      }
+
+      .tooltip-assets {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+
+        @media (max-width: 450px) { gap: 16px; }
+      }
+
+      .tooltip-asset-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          filter: none;
+
+          @media (max-width: 450px) { width: 32px; height: 32px; }
+        }
+
+        span {
+          color: $accent;
+          font-size: 0.875rem;
+          white-space: nowrap;
+        }
+      }
+
+      .tooltip-arrow {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid white;
+
+        @media (max-width: 600px) {
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%) translateX(-100%);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-left: none;
+          border-right: 10px solid white;
+        }
+      }
+
+      @media (max-width: 600px) {
+        bottom: auto;
+        top: 32px;
+        left: calc(50% + 48px);
+        transform: translateY(-50%) translateX(10px);
+        width: 220px;
+        padding: 16px;
+      }
+
+      @media (max-width: 450px) {
+        width: 180px;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover .skill-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+
+        @media (max-width: 600px) {
+          transform: translateY(-50%) translateX(0);
+        }
+      }
+    }
   }
 }

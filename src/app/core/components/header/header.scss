@@ -7,6 +7,7 @@
   right: 0;
   height: 104px;
   z-index: 5000;
+  overflow: visible;
   transition: background $transition, box-shadow $transition;
 
   &.scrolled {

@@ -7,10 +7,17 @@
   },
   "HERO": {
     "GREETING": "Hallo, ich bin",
-    "ROLE": "Frontend Developer",
+    "ROLE": "Frontend-Entwickler",
     "CTA_PROJECTS": "Meine Projekte",
     "CTA_CONTACT": "Kontakt aufnehmen",
-    "SCROLL": "Scrollen"
+    "SCROLL": "Scrollen",
+    "MARQUEE": {
+      "REMOTE_WORK": "Verfügbar für Remote-Arbeit",
+      "JOB_TITLE": "Frontend-Entwickler",
+      "LOCATION": "Wohnhaft in Zeitlarn, DE",
+      "OPEN_TO_WORK": "Offen für neue Stellen",
+      "TECH": "Angular · TypeScript · JavaScript"
+    }
   },
   "ABOUT": {
     "LABEL": "WER ICH BIN",
@@ -29,7 +36,8 @@
     "TITLE": "Skills",
     "SUBTITLE": "Was ich beherrsche",
     "DESC": "Ich habe Erfahrung in der Entwicklung von modernen Web-Anwendungen. Durch kontinuierliches Lernen erweitere ich mein Skillset stetig.",
-    "CTA": "Meine Projekte ansehen"
+    "CTA": "Meine Projekte ansehen",
+    "TOOLTIP": "Das möchte ich als Nächstes lernen"
   },
   "PROJECTS": {
     "LABEL": "MEINE ARBEIT",
@@ -73,7 +81,7 @@
     "MADE_WITH": "Entwickelt von",
     "IMPRINT": "Impressum",
     "PRIVACY": "Datenschutz",
-    "BASED": "Based in Zeitlarn, DE"
+    "BASED": "Wohnhaft in Zeitlarn, DE"
   },
   "LEGAL": {
     "BACK": "Zurück",

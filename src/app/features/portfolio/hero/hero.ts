@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './hero.scss',
 })
 export class Hero {
-  marqueeItems = [
-    'Available for remote work', '✦',
-    'Frontend Developer', '✦',
-    'Based in Zeitlarn, DE', '✦',
-    'Open to work', '✦',
-    'Angular · TypeScript · JavaScript', '✦',
+  marqueeItems: string[] = [
+    'HERO.MARQUEE.REMOTE_WORK',
+    'HERO.MARQUEE.JOB_TITLE',
+    'HERO.MARQUEE.LOCATION',
+    'HERO.MARQUEE.OPEN_TO_WORK',
+    'HERO.MARQUEE.TECH',
   ];
 
   scrollTo(id: string): void {
